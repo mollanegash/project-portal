@@ -1,10 +1,6 @@
-# Your Team Name:
-                 Team 4
-Briefly introduce your team: 
-                            Our team has assigned to do Project portal. It has 5 members and each meber has their own role.
-## Lead Role: 
+Team 4
+It has 5 members and each meber has their own role.
 My role is to project Design and Implementation: 
-List all lead roles:
                     Team Leader: Connor Richarmon
                     Back up Team Leader: Zachary Kysar
                     Requirement: Zachary Kysar
@@ -12,7 +8,6 @@ List all lead roles:
                     QA Leader: Juan Scanchez
                     Configuration Leader: Coonor Richarmon
                     Security Leader: Rattikarn Dudley  
-## Team members:
                 Connor Richarmon
                 Zachary Kysar
                 Zachary Kysar
@@ -20,7 +15,6 @@ List all lead roles:
                 Juan Scanchez
                 Coonor Richarmon
                 Rattikarn Dudley
-Each member adds a paragraph here to introduce yourself:
 
 I am Molla. I am one of the memebr of team 4 and have assigned as Design and Implementation Leader.
 
