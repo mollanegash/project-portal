@@ -23,7 +23,8 @@ My role is Design and Implementation:
                 ##Molla Negash - 
                 I am Molla. I am one of the memebrs of team 4 and have assigned as Design and Implementation Leader.
                 
-                ##Juan Scanchez
+                ##Juan P Sanchez (JP)
+                Hi my name is Juan Pablo, but I go by JP. Adding edit on Lab1 Branch. I am the QA leader and excited about this class and project. First experience with Github.   
                 
                 ##Coonor Richarmon
                 
