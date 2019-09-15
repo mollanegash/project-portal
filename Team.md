@@ -15,15 +15,21 @@ My role is Design and Implementation:
                     
                     members list
                     
-                Connor Richarmon
-                Zachary Kysar
-                Zachary Kysar
-                Molla Negash
-                Juan Scanchez
-                Coonor Richarmon
-                Rattikarn Dudley
+                ##Connor Richarmon
+                
+                ##Zachary Kysar - 
+                Hi, I am Zak, editing this on Lab1 Branch.  I am back up team leader and Requirement leader.  First semester using Github.  My work uses it, and branches, so I am very interested in these topics and am excited to learn.  
+               
+                ##Molla Negash - 
+                I am Molla. I am one of the memebrs of team 4 and have assigned as Design and Implementation Leader.
+                
+                ##Juan Scanchez
+                
+                ##Coonor Richarmon
+                
+                ##Rattikarn Dudley
 
-I am Molla. I am one of the memebrs of team 4 and have assigned as Design and Implementation Leader.
+
 
 
 
