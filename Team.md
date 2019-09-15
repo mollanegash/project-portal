@@ -1,4 +1,5 @@
-Team name: Team 4 
+Team name: Team 4
+
 It has 5 members and each meber has their own role.
 
 My role is Design and Implementation: 
@@ -11,6 +12,8 @@ My role is Design and Implementation:
                     QA Leader: Juan Scanchez
                     Configuration Leader: Coonor Richarmon
                     Security Leader: Rattikarn Dudley
+                    
+                    members list
                     
                 Connor Richarmon
                 Zachary Kysar
