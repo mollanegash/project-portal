@@ -18,7 +18,7 @@ My role is Design and Implementation:
                 ##Connor Richarmon
                 
                 ##Zachary Kysar - 
-                Hi, I am Zak, editing this on Lab1 Branch. <br/> 
+                Hi, I am Zak, editing this on Lab1 Branch. <br> 
 		I am back up team leader and Requirement leader. <br/> 
 		First semester using Github.  My work uses it, and branches, <br/> 
 		so I am very interested in these topics and am excited to learn.  <br/>
