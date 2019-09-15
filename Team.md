@@ -23,7 +23,7 @@ My role is Design and Implementation:
                 Coonor Richarmon
                 Rattikarn Dudley
 
-I am Molla. I am one of the memebr of team 4 and have assigned as Design and Implementation Leader.
+I am Molla. I am one of the memebrs of team 4 and have assigned as Design and Implementation Leader.
 
 
 
