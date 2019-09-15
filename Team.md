@@ -1,5 +1,6 @@
-Team 4
+Team name: Team 4
 It has 5 members and each meber has their own role.
+
 My role is to project Design and Implementation: 
                     Team Leader: Connor Richarmon
                     Back up Team Leader: Zachary Kysar
@@ -7,7 +8,8 @@ My role is to project Design and Implementation:
                     Design and Implementation Leader: Molla Negash
                     QA Leader: Juan Scanchez
                     Configuration Leader: Coonor Richarmon
-                    Security Leader: Rattikarn Dudley  
+                    Security Leader: Rattikarn Dudley
+                    
                 Connor Richarmon
                 Zachary Kysar
                 Zachary Kysar
