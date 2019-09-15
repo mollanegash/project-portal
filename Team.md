@@ -29,6 +29,7 @@ My role is Design and Implementation:
                 ##Coonor Richarmon
                 
                 ##Rattikarn Dudley
+		Hi, My name is Rattikarn Dudley. I am a security lead role. I am happy with this role since I am currently taking cyber security class and have been passionated about cyber security and network security. This is my first time working in a team environment. Happy to be part of the team ! Happy coding everyone 
 
 
 
