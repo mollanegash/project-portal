@@ -18,29 +18,29 @@ My role is Design and Implementation:
                 ##Connor Richarmon
                 
                 ##Zachary Kysar - 
-                Hi, I am Zak, editing this on Lab1 Branch. <br> 
-		I am back up team leader and Requirement leader. <br/> 
-		First semester using Github.  My work uses it, and branches, <br/> 
-		so I am very interested in these topics and am excited to learn.  <br/>
+                Hi, I am Zak, editing this on Lab1 Branch. 
+		I am back up team leader and Requirement leader.  
+		First semester using Github.  My work uses it, and branches,  
+		so I am very interested in these topics and am excited to learn.  
                
                 ##Molla Negash - 
-                I am Molla. I am one of the memebrs of team 4 <br/> 
-		and have assigned as Design and Implementation Leader. <br/>
+                I am Molla. I am one of the memebrs of team 4 
+		and have assigned as Design and Implementation Leader. 
                 
                 ##Juan P Sanchez (JP)
-                Hi my name is Juan Pablo, but I go by JP.<br/> 
-		Adding edit on Lab1 Branch. <br/>
-		I am the QA leader and excited about this class and project. <br/> 
-		First experience with Github. <br/>   
+                Hi my name is Juan Pablo, but I go by JP.
+		Adding edit on Lab1 Branch. 
+		I am the QA leader and excited about this class and project.  
+		First experience with Github. 
                 
                 ##Coonor Richarmon
                 
                 ##Rattikarn Dudley
-		Hi, My name is Rattikarn Dudley. I am a security lead role. <br/>
-		I am happy with this role since I am currently taking cyber security class <br/>
-		and have been passionated about cyber security and network security.<br/>
-		This is my first time working in a team environment. <br/> 
-		Happy to be part of the team ! Happy coding everyone <br/>  
+			Hi, My name is Rattikarn Dudley. I am a security lead role. 
+		I am happy with this role since I am currently taking cyber security class 
+		and have been passionated about cyber security and network security.
+		This is my first time working in a team environment. 
+		Happy to be part of the team ! Happy coding everyone   
 
 
 
