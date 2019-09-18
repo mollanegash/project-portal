@@ -16,10 +16,11 @@ My role is Design and Implementation:
 
                     members list
 
-                ##Connor Richmond - My name is Connor and I am the
-                Team Lead. This will be my first time taking on a team lead position
-                for a software based project. Most of my work is in python with some
-                past experience in C++. Excited to work on this project!
+                ##Connor Richmond 
+		My name is Connor and I am the Team Lead. This will be my first time 
+		taking on a team lead position for a software based project. Most of 
+		my work is in python with some past experience in C++. Excited to work 
+		on this project!
 
                 ##Zachary Kysar 
                 Hi, I am Zak, editing this on Lab1 Branch.I am back up team leader and 
