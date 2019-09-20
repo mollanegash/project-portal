@@ -1,4 +1,7 @@
-
+##Molla Negash -
+                I am Molla. I am one of the memebrs of team 4and have assigned as Design 
+		and Implementation Leader.
+		
 Team name: Team 4
 
 It has 5 members and each meber has their own role.
@@ -27,9 +30,7 @@ My role is Design and Implementation:
 		Requirement leader.First semester using Github.  My work uses it,  and 
 		branches,so I am very interested in these topics and am excited to learn.
                 
-		##Molla Negash -
-                I am Molla. I am one of the memebrs of team 4and have assigned as Design 
-		and Implementation Leader.
+		
 
                 
 		##Juan P Sanchez (JP)
