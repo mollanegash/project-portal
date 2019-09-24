@@ -1,0 +1,263 @@
+
+body {
+    font-family: Lato, sans-seri;
+    background-color: #fefbf9;  
+    background: url(./PageBackgroundHeader3.png) no-repeat top center;
+    background-size: contain;
+
+}
+
+::placeholder {
+  color: #D3D3D3 !important;
+}
+
+.customFormErrorText {
+	color: red;
+	padding-bottom: .7rem;
+}
+
+.headerimg {
+	margin-top:10%;
+}
+
+.button {
+	font-size: 20pt;
+	padding: 7px;
+  	border: 1px solid #525050;
+  	border-radius: .5em;
+  	font-family: Lato, sans-serif;
+  	background-color: #E6DEF6;
+  	cursor: pointer;
+  	
+}
+
+/* 1em = 10px Only one here with purple shadow - was - box-shadow: 0px 15px 20px #d7caf1; */
+.button:hover {
+  box-shadow: 4px 12px 20px #525050;
+}
+
+.btntxtsmall {
+	font-size: 12pt;
+	padding: 4px;
+}
+
+main {
+	margin-top: 1%;
+}
+
+.pageintroduction {
+	font-family: Brilliants, sans-seri;
+	 font-size: 35pt;
+	 padding-top: 3%;
+	 padding-bottom: 3%;
+	 padding-left: 5%;
+}
+
+.cardd {
+	margin: .6rem;
+	padding: .6rem;
+	background-color: #f6e6de;
+	box-shadow: 3px 4px 10px #525050;
+	border-radius: .3em;
+}
+
+.FAQsbtn {
+	background-color: #f6e6de;
+	width: 100%;
+	border: 0px;
+	
+}
+
+.topBorder {
+	border-top: 1px solid #525050;
+}
+
+.servicesbuttons {
+	padding-top: 5px;
+	padding-bottom: 5px;
+	display: block;
+	margin-left: 15px;
+	margin-right: 15px;
+	
+}
+
+.servicesbuttons .pageintroduction {
+	font-size: 28pt;
+	
+}
+
+.servicesbuttons label {
+	display: block;
+	width: 100%;
+	border-radius: .3em;
+} 
+
+.servicescards {
+	margin: .6rem;
+	padding-bottom: .1rem;
+	background-color: #f6e6de;
+	box-shadow: 3px 4px 10px #525050;
+	border-radius: .3em;
+	display: block;
+}
+
+.servicescards label {
+	display: block;
+	width: 100%;
+	padding: .6rem;
+}
+
+.universal-services{
+	background-color: #f6e6de;
+}
+
+.chooseservicetype {
+	
+	border-right: 1px solid #525050;
+	border-left: 1px solid #525050;
+	border-top: 1px solid #525050;
+	border-top-left-radius: .3em;
+	border-top-right-radius: .3em;
+}
+
+.datingServices {
+	padding-top: 5px;
+	padding-bottom: 5px;
+	
+	border-right: 1px solid #525050;
+	border-left: 1px solid #525050;
+	border-bottom: 1px solid #525050;
+	border-bottom-left-radius: .3em;
+	border-bottom-right-radius: .3em;
+}
+
+.relationshipServices {
+	padding-top: 5px;
+	padding-bottom: 5px;
+	
+	border-right: 1px solid #525050;
+	border-left: 1px solid #525050;
+	border-bottom: 1px solid #525050;
+	border-bottom-left-radius: .3em;
+	border-bottom-right-radius: .3em;
+}
+
+.card-tittle {
+	font-family: Brilliants, sans-seri;
+	font-size: 18pt;
+	font-family: Lato, sans-seri;
+	display: block;
+	width: 100%;
+}
+
+.makeWidth {
+	width: 100%;
+}
+
+.card-textt {
+	font-family: Lato, sans-seri;
+	display: block;
+	width: 100%;
+}
+
+.price {
+	font-family: Brilliants, sans-seri;
+	font-size: 14pt;
+	border-radius: 100%;
+	padding: 10px;
+	background-color: #525050;
+	color: white;
+	display: block;
+}
+
+.nav {
+	background-color: black;
+	border-radius: 10px;
+}
+
+.nav-link {
+	color: #fefbf9;
+	font-family: Brilliants, sans-seri;
+	font-size:30pt;
+	padding-top: .8rem;
+	padding-bottom: .65rem;
+	
+}
+
+.nav-link:hover {
+	background-color: #282727;
+	color: #fefbf9;
+	border-radius: 10px;
+}
+
+.nav-link:active {
+	background-color: #3D3C3C;
+	color: #fefbf9;
+	border-radius: 10px;
+}
+
+
+
+.logo-header {
+	color: black;
+	font-family: Brilliants, sans-seri;
+	font-size: 80pt;
+	padding-top: 4%;
+	font-weight: 400;
+}
+
+.tinyheader {
+	font-size: 12pt;
+	font-family: Lato, sans-seri;
+}
+
+.sub-logo-header {
+	 font-family: Lato, sans-seri;
+	 font-size: 18pt;
+}
+
+.footer {
+	font-family: Brilliants, sans-seri;
+	font-size: 21pt;
+	padding-top: 1rem;
+}
+
+
+@media (max-width: 768px) {
+	.pageintroduction {font-size: 25pt;}
+	.nav-link {font-size: 20pt;}
+	.logo-header {font-size: 45pt;}
+	.tinyheader {font-size: 9pt;}
+	.sub-logo-header {font-size: 12pt;}
+	.footer {font-size: 16pt;}
+	.headerimg {padding-left:10%; padding-right:10%;}
+	.headerimg2 {padding-left:10%; padding-right:10%;}
+	.servicesbuttons .pageintroduction {font-size: 23pt;}
+
+}
+
+
+@media (max-width: 576px) {
+	.pageintroduction {font-size: 20pt;}
+	.nav-link {font-size: 18pt;}
+	.logo-header {font-size: 40pt;}
+	.tinyheader {font-size: 6pt;}
+	.sub-logo-header {font-size: 8pt;}
+	.footer {font-size: 12pt;}
+	.headerimg {padding-left:10%; padding-right:10%;}
+	.headerimg2 {padding-left:10%; padding-right:10%;}
+	.servicesbuttons .pageintroduction {font-size: 18pt;}
+ 
+}
+
+
+
+@font-face {
+    font-family: Brilliants;
+    src: url(Brilliantsignature1regular.otf) format("opentype");
+}
+
+@font-face {
+    font-family: Lato, sans-serif;
+    src: url(Lato-Light.ttf) format("truetype");
+}
