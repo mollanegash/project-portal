@@ -18,8 +18,8 @@ Here users can search through all of our hosted projects to find the work thats 
 Since this is a web based application there is no installation necessary (outside of a web browser). Just visit our link!
 
 ## Team
-Zachary Kysar
-Connor Richmond
-Juan Scanchez
-Rattikarn Dudley
-Molla Negash
+Zachary Kysar,
+Connor Richmond,
+Juan Scanchez,
+Rattikarn Dudley,
+and Molla Negash,
