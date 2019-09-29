@@ -22,4 +22,4 @@ Zachary Kysar,
 Connor Richmond,
 Juan Scanchez,
 Rattikarn Dudley,
-and Molla Negash,
+and Molla Negash
