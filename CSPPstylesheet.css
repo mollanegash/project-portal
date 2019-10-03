@@ -122,45 +122,6 @@ main {
 
 }
 
-.chooseservicetype {
-
-  border-right: 1px solid #525050;
-  border-left: 1px solid #525050;
-  border-top: 1px solid #525050;
-  border-top-left-radius: .3em;
-  border-top-right-radius: .3em;
-}
-
-.datingServices {
-  padding-top: 5px;
-  padding-bottom: 5px;
-
-  border-right: 1px solid #525050;
-  border-left: 1px solid #525050;
-  border-bottom: 1px solid #525050;
-  border-bottom-left-radius: .3em;
-  border-bottom-right-radius: .3em;
-}
-
-.relationshipServices {
-  padding-top: 5px;
-  padding-bottom: 5px;
-
-  border-right: 1px solid #525050;
-  border-left: 1px solid #525050;
-  border-bottom: 1px solid #525050;
-  border-bottom-left-radius: .3em;
-  border-bottom-right-radius: .3em;
-}
-
-.card-tittle {
-  font-family: Brilliants, sans-seri;
-  font-size: 18pt;
-  font-family: Lato, sans-seri;
-  display: block;
-  width: 100%;
-}
-
 .makeWidth {
   width: 100%;
 }
@@ -260,6 +221,7 @@ main {
   font-family: Brilliants, sans-seri;
   font-size: 21pt;
   padding-top: 1rem;
+  margin-top: 25%;
 }
 
 
