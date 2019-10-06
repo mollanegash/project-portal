@@ -1,0 +1,158 @@
+@{
+	
+	
+	
+	var mProjectNameContainsString = Request.QueryString.Get("projectname");
+	var mProjectDescriptionContainsString = Request.QueryString.Get("projectdescription");
+	var mAuthorsContainsString = Request.QueryString.Get("authors");
+	var mProjectTag1ContainsString = Request.QueryString.Get("projecttag1");
+	
+	
+	var db = Database.Open("computerscienceprojectportal");
+    var begginingQueryString = "select * from computerscienceprojectportal.computerscienceprojectportal.PROJECT WHERE ";
+	
+	var ProjectNameQueryString = "";
+	var ProjectDescriptionQueryString = "";
+	var AuthorsQueryString = "";
+	var ProjectTag1QueryString = "";
+	var NotNullVariableCount = 0;
+	
+	if (mProjectNameContainsString != "") {
+		
+		if (NotNullVariableCount == 0) {
+			ProjectNameQueryString = " ProjectName like '%" + mProjectNameContainsString + "%'";
+		}
+		else {
+			ProjectNameQueryString = " AND ProjectName like '%" + mProjectNameContainsString + "%'";
+		}
+		NotNullVariableCount = NotNullVariableCount+1;
+	}
+	
+	if (mProjectDescriptionContainsString != "") {
+		
+		if (NotNullVariableCount == 0) {
+			ProjectDescriptionQueryString = " ProjectDescription like '%" + mProjectDescriptionContainsString + "%'";
+		}
+		else {
+			ProjectDescriptionQueryString = " AND ProjectDescription like '%" + mProjectDescriptionContainsString + "%'";
+		}
+		
+		NotNullVariableCount = NotNullVariableCount+1;
+	}
+	
+	
+	if (mAuthorsContainsString != "") {
+		
+		if (NotNullVariableCount == 0) {
+			AuthorsQueryString = " Authors like '%" + mAuthorsContainsString + "%'";
+		}
+		else {
+			AuthorsQueryString = " AND Authors like '%" + mAuthorsContainsString + "%'";
+		}
+		
+		NotNullVariableCount = NotNullVariableCount+1;
+	}
+	
+	
+	if (mProjectTag1ContainsString != "") {
+		
+		if (NotNullVariableCount == 0) {
+			ProjectTag1QueryString = " ProjectTag1 like '%" + mProjectTag1ContainsString + "%'";
+		}
+		else {
+			ProjectTag1QueryString = " AND ProjectTag1 like '%" + mProjectTag1ContainsString + "%'";
+		}
+		
+		NotNullVariableCount = NotNullVariableCount+1;
+	}
+	
+
+	
+	var selectQueryString = begginingQueryString + ProjectNameQueryString + ProjectDescriptionQueryString + AuthorsQueryString + ProjectTag1QueryString;
+
+
+}
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	
+	
+	
+	<!-- Required meta tags -->
+	<meta name="description" content="WebDev">
+	<meta name="keywords" content="Computer Science Project Portal">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta charset="UTF-8">
+	<title>Computer Science Project Portal</title>
+	
+	<!-- Bootstrap css -->
+	<link rel="stylesheet" 
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" 
+    crossorigin="anonymous">
+	
+	<!-- Custom CSS  - put last to override bootstrap where needed-->
+	<link rel="stylesheet" href="CSPPstylesheet.css">
+
+	<script src="jquery-3.3.1.js"></script>
+	<script src="CSPPjavascript.js"></script>
+	<script src="CSPPJQuery.js"></script>
+
+		
+	
+</head>
+<body>
+	<header>
+  		<!-- DOM innerHTML logo text -->
+  			<div id="universal-header"></div>
+	
+		<!-- DOM innerHTML navigation bar -->
+			<div id="universal-navbar"></div>
+	</header>
+	
+	<main>	
+		<div class="container">
+  			<div id="imgRowHomePage" class="row">
+			  	<h1 class="pageintroduction">Search Results</h1>
+			</div>
+            <div class="row">
+                <table border="1" border-spacing: 2px; cellpadding: 2px;>
+                   <thead>
+                       <tr>
+                           <th>ProjectNumber </th>
+                           <th>ProjectName</th>
+                           <th>ProjectDescription</th>
+						   <th>Authors</th>
+						   <th>UploadDate</th>
+						   <th>ProjectTag1</th>
+                       </tr>
+                   </thead>
+                   <tbody>
+                       @foreach(var row in db.Query(selectQueryString)){
+                        <tr>
+                           <td>@row.ProjectNumber</td>
+                           <td>@row.ProjectName</td>
+                           <td>@row.ProjectDescription</td>
+						   <td>@row.Authors</td>
+						   <td>@row.UploadDate </td>
+						   <td>@row.ProjectTag1</td>
+                        </tr>
+                       }
+                   </tbody>
+               </table>
+			</div>
+  		</div>
+  		
+	</main>
+	
+	<footer>
+		<!-- DOM innerHTML footer -->
+  			<div id="universal-footer"></div>
+	</footer>
+
+
+</body>
+</html>
