@@ -16,6 +16,10 @@
 					   '<li class="nav-item">'+
 					  	'<a class="nav-link" href="viewproject.cshtml">View Projects</a>'+
 					  '</li>'+
+					   '</li>'+
+					   '<li class="nav-item">'+
+					  	'<a class="nav-link" href="submitsearch.cshtml">Search</a>'+
+					  '</li>'+
 					'</ul>'+
 				'</nav>'+
 			 '</div>';

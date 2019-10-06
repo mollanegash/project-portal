@@ -22,7 +22,6 @@
 	var ProjectTag1 = Request.Form["ProjectTag1"];
 
    if (IsPost && Validation.IsValid()) {
-   //if (IsPost) {
         // Define the insert query. The values to assign to the
         // columns in the Product table are defined as parameters
         // with the VALUES keyword.
@@ -80,8 +79,8 @@
 	<main>	
 	
 		<div class="container">
-  			<h1 class="pageintroduction">Free Consultation and Contact Me Form</h1>
-			@Html.ValidationSummary("Errors with your submission:")
+  			<h1 class="pageintroduction">Add Project</h1>
+			@Html.ValidationSummary()
 
 		<div id="formWrapper">
 		    <form name="AddProject" id="AddProject" method="post" " onsubmit="return validateForm();">
