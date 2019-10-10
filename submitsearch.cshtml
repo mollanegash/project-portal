@@ -1,39 +1,47 @@
 
-
 @{
     
-	//https://docs.microsoft.com/en-us/aspnet/web-pages/overview/data/5-working-with-data
-	// c# razor validation errors
-	
-	Validation.RequireField("ProjectNumber", "ProjectNumber is required.");
-   	Validation.RequireField("ProjectName", "ProjectName is required.");
-    Validation.RequireField("ProjectDescription", "ProjectDescription is required.");
-	Validation.RequireField("Authors", "Authors is required.");
-	Validation.RequireField("UploadDate", "UploadDate");
-	Validation.RequireField("ProjectTag1", "ProjectTag1");
+	// c# razor 
+	//https://www.w3schools.com/asp/razor_syntax.asp
 
-    var db = Database.Open("computerscienceprojectportal");
-    
-	var ProjectNumber = Request.Form["ProjectNumber"];
     var ProjectName = Request.Form["ProjectName"];
     var ProjectDescription = Request.Form["ProjectDescription"];
 	var Authors = Request.Form["Authors"];
-	var UploadDate = Request.Form["UploadDate"];
 	var ProjectTag1 = Request.Form["ProjectTag1"];
 
-   if (IsPost && Validation.IsValid()) {
-        // Define the insert query. The values to assign to the
-        // columns in the Product table are defined as parameters
-        // with the VALUES keyword.
-        if(ModelState.IsValid) {
-            var insertQuery = "INSERT INTO computerscienceprojectportal.computerscienceprojectportal.PROJECT " +
-                "VALUES (@0, @1, @2, @3, @4,@5)";
-            db.Execute(insertQuery, ProjectNumber, ProjectName, ProjectDescription, Authors, UploadDate, ProjectTag1);
-            // Display the page that lists products.
-            Response.Redirect("viewproject.cshtml");
+   if (IsPost) {
+            var BaseResponseRedirectString = "searchresults.cshtml?";
+			var ProjectNameURL = "";
+			var ProjectDescriptionURL = "";
+			var AuthorsURL = "";
+			var ProjectTag1URL = "";
+			
+			if (ProjectName != "") {
+				ProjectNameURL = "&projectname=" + ProjectName;
+			}
+			
+			if (ProjectDescription != "") {
+				ProjectDescriptionURL = "&projectdescription=" + ProjectDescription;
+			}
+			
+			
+			if (Authors != "") {
+				AuthorsURL = "&authors=" + Authors;
+			}
+			
+			
+			if (ProjectTag1 != "") {
+				ProjectTag1URL = "&projecttag1=" + ProjectTag1;
+			}
+			
+
+			Response.Redirect(BaseResponseRedirectString+ProjectNameURL+ProjectDescriptionURL+AuthorsURL+ProjectTag1URL);
         }
     }
 }
+
+
+
 
 
 
@@ -79,16 +87,11 @@
 	<main>	
 	
 		<div class="container">
-  			<h1 class="pageintroduction">Add Project</h1>
-			@Html.ValidationSummary()
+  			<h1 class="pageintroduction">Search Projects</h1>
 
 		<div id="formWrapper">
-		    <form name="AddProject" id="AddProject" method="post" " onsubmit="return validateForm();">
-		       <div id="rowf" class="form-group">
-		        <label for="ProjectNumber">ProjectNumber</label>
-		        <input class="form-control" type="text" name="ProjectNumber" id="ProjectNumber" placeholder="ProjectNumber ">
-		        <p id="ProjectNumber-error" class="customFormErrorText"></p>
-		      </div>
+		    <form name="SearchProject" id="SearchProject" method="post">
+		  
 			  <div id="rowA" class="form-group">
 		        <label for="ProjectName">ProjectName</label>
 		        <input class="form-control" type="text" name="ProjectName" id="ProjectName" placeholder="ProjectName">
@@ -103,17 +106,13 @@
 		     
 		      <div id="rowg" class="form-group">
 		        <label for="Authors">Authors</label>
-		        <textarea class="form-control" rows="3" name="Authors" id="Authors" placeholder="Authors"></textarea>
+		        <textarea class="form-control" rows="1" name="Authors" id="Authors" placeholder="Authors"></textarea>
 		        <p id="Authors-error" class="customFormErrorText"></p>
 		      </div>
-		      <div id="rowh" class="form-group">
-		        <label for="UploadDate">UploadDate </label>
-		        <textarea class="form-control" rows="3" name="UploadDate" id="UploadDate" placeholder="has to be 10/2/2020"></textarea>
-		        <p id="UploadDate-error" class="customFormErrorText"></p>
-		      </div>
+		      
 		      <div id="rowi" class="form-group">
 		        <label for="ProjectTag1">ProjectTag1</label>
-		        <textarea class="form-control" rows="3" name="ProjectTag1" id="ProjectTag1" placeholder="ProjectTag1"></textarea>
+		        <textarea class="form-control" rows="1" name="ProjectTag1" id="ProjectTag1" placeholder="ProjectTag1"></textarea>
 		        <p id="ProjectTag1-error" class="customFormErrorText"></p>
 		      </div>
 		      
@@ -122,7 +121,7 @@
 		      <div id="rowk" class="form-group">
 		        <div class="row">
 					<div class="col-sm">
-		        		<button class="button float-right" type="submit" id="submit">Add Project</button>
+		        		<button class="button float-right" type="submit" id="submit">Search</button>
 		        	</div>
 		        </div>
 		      </div>
