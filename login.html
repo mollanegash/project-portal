@@ -30,13 +30,32 @@
 <body>
 	<header>
 		<!-- DOM innerHTML logo text -->
-		<div id="universal-header"></div>
+		<div id="universal-header">
+			<div class="container-header">
+				<img class ="cs-logo" src="Logo.png" alt="cs-portal-logo">
+				<h1 class="logo-header text-center">Computer Science Project Portal</h1>
+			</div>
+			<h3 class="sub-logo-header">CS673 Team 4</h3>
+		</div>
 		<!-- 	<div><a href="emailsent.html">Check the 'email sent' page</a></div> -->
 		<!-- DOM innerHTML navigation bar -->
-		<div id="universal-navbar"></div>
+		<div id="universal-navbar">
+			<div class="container-fluid">
+				<nav>
+					<ul class="nav  nav-ul-head nav-fill">
+						<li class="nav-item nav-1">
+							<a class=" nav-head" href="index.html">Home</a>'
+						</li>
+						<li class="nav-item nav-2 ">
+							<a class="nav-head" href="signup.html">Sign Up</a>
+						</li>
+					</ul>
+				</nav>
+			</div>
+		</div>
 	</header>
 
-	<main>
+	<main class="wrapper">
 		<div class="container container-fluid">
 			<form class="form-container">
 				<div class="form-group">
@@ -60,9 +79,9 @@
 
 	</main>
 
-	<footer>
+	<footer >
 		<div class="container-fluid">
-			<nav class="navbar navbar-expand-sm ">
+			<nav class="navbar navbar-expand-sm">
 				<ul class="navbar-nav nav-footer">
 					<li class="nav-item" >
 						<a class="nav-link" href="#">About |</a>
@@ -77,17 +96,15 @@
 						<a class="nav-link" href="#">Policy |</a>
 					</li>
 				</ul>
-			</nav>
-			<div class="right-footer">
-				<p>&copy; 2019     CSprojectportal.com<p>
-				</div>
-
 			</div>
+		</nav>
+	</div>
+	<div class="right-footer">
+		<p>&copy; 2019     CSprojectportal.com<p>
+		</div>
+
+	</footer>
 
 
-
-		</footer>
-
-
-	</body>
-	</html>
+</body>
+</html>
