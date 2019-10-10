@@ -14,7 +14,7 @@
 					  	'<a class="nav-link" href="addproject.cshtml">Add Project</a>'+
 					  '</li>'+
 					   '<li class="nav-item">'+
-					  	'<a class="nav-link" href="viewproject.cshtml">View Projects</a>'+
+					  	'<a class="nav-link" href="searchresults.cshtml">Projects List</a>'+
 					  '</li>'+
 					   '</li>'+
 					   '<li class="nav-item">'+

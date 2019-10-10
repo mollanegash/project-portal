@@ -1,7 +1,5 @@
 @{
-	
-	
-	
+
 	var mProjectNameContainsString = Request.QueryString.Get("projectname");
 	var mProjectDescriptionContainsString = Request.QueryString.Get("projectdescription");
 	var mAuthorsContainsString = Request.QueryString.Get("authors");
@@ -69,9 +67,39 @@
 
 	
 	var selectQueryString = begginingQueryString + ProjectNameQueryString + ProjectDescriptionQueryString + AuthorsQueryString + ProjectTag1QueryString;
+	
+	
+	
+	if (IsPost) {
+		var buttonsProjectId = Request.Params.AllKeys.FirstOrDefault(key => key.StartsWith("ProjectNumber"));
+
+		if (!string.IsNullOrEmpty(buttonsProjectId))
+		{
+		
+			if (buttonsProjectId.Contains("View")) {
+				var projectIdViewing = int.Parse(buttonsProjectId.Replace("ProjectNumberView=", string.Empty));
+			
+				Response.Redirect("viewproject.cshtml?projectId=" + projectIdViewing);
+			}
+			
+			
+			if (buttonsProjectId.Contains("Remove")) {
+				var projectIdRemoving = int.Parse(buttonsProjectId.Replace("ProjectNumberRemove=", string.Empty));
+
+				var RemoveQueryString = "DELETE from computerscienceprojectportal.computerscienceprojectportal.PROJECT WHERE ProjectNumber = " + projectIdRemoving;
+				db.Query(RemoveQueryString);
+			}
+			
+			
+			
+			
+			
+		}
+	}
 
 
 }
+
 
 
 
@@ -118,31 +146,31 @@
   			<div id="imgRowHomePage" class="row">
 			  	<h1 class="pageintroduction">Search Results</h1>
 			</div>
-            <div class="row">
-                <table border="1" border-spacing: 2px; cellpadding: 2px;>
-                   <thead>
-                       <tr>
-                           <th>ProjectNumber </th>
-                           <th>ProjectName</th>
-                           <th>ProjectDescription</th>
-						   <th>Authors</th>
-						   <th>UploadDate</th>
-						   <th>ProjectTag1</th>
-                       </tr>
-                   </thead>
-                   <tbody>
+			 <div id="MainProjectsList">
                        @foreach(var row in db.Query(selectQueryString)){
-                        <tr>
-                           <td>@row.ProjectNumber</td>
-                           <td>@row.ProjectName</td>
-                           <td>@row.ProjectDescription</td>
-						   <td>@row.Authors</td>
-						   <td>@row.UploadDate </td>
-						   <td>@row.ProjectTag1</td>
-                        </tr>
+      						<div style="border-radius: 25px; border: 2px solid #212529; padding: 20px; margin: 8px;" class="row">
+								<p>
+								  Project Number: @row.ProjectNumber <br>  
+									Project Name: @row.ProjectName <br>
+									Project Description: @row.ProjectDescription <br>
+									Authors: @row.Authors  <br>
+									UploadDate: @row.UploadDate <br>
+									ProjectTag1: @row.ProjectTag1 
+								 </p> 
+								 
+									
+									<form action="" method="post">
+										<input class="button" name="ProjectNumberRemove=@row.ProjectNumber" type="submit" value="Remove" />
+									</form>
+									
+									
+									<form action="" method="post">
+										<input class="button" name="ProjectNumberView=@row.ProjectNumber" type="submit" value="View" />
+									</form>
+							
+							</div>
                        }
-                   </tbody>
-               </table>
+       			<div>
 			</div>
   		</div>
   		
