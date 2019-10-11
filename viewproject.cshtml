@@ -1,12 +1,11 @@
 @{
-    var mProjectNumber = "0";
-	mProjectNumber = Request.QueryString.Get("projectId");
-	if (mProjectNumber == null) {mProjectNumber = "0";}
+	var mProjectNumber = Request.QueryString.Get("projectId");
+	if (mProjectNumber == null) {mProjectNumber = "100000000";}
 	
 	var db = Database.Open("computerscienceprojectportal");
-    var selectQueryString = "select * from computerscienceprojectportal.computerscienceprojectportal.PROJECT WHERE ProjectNumber = " + int.Parse(mProjectNumber);
+    var selectQueryString = "select * from computerscienceprojectportal.computerscienceprojectportal.PROJECT WHERE ProjectNumber = " + mProjectNumber;
 	
-	//db.Query(selectQueryString);
+
 
 
 }

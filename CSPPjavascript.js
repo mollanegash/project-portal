@@ -26,13 +26,35 @@
 		 
 		 document.getElementById("universal-header").innerHTML =
 			'<div class="container-fluid">'+
-				'<h1 class="logo-header text-center">Computer Science Project Portal<span class="tinyheader">M.Ed</span></h1>'+
-				'<h3 class="sub-logo-header text-center">CS673 Team 4</h3>'+
+				'<div class="container-header">'+
+					'<img class ="cs-logo" src="Logo.png" alt="cs-portal-logo">'+
+					'<h1 class="logo-header text-center">Computer Science Project Portal</h1>'+
+				'</div>'+
+				'<h3 class="sub-logo-header">CS673 Team 4</h3>'+
+				
 			'</div>';
 		 
 		 document.getElementById("universal-footer").innerHTML =
 			'<div class="container text-center footer">'+
-				'<p>common footer . . .</p>'+
+					'<nav class="">'+
+						'<ul class="">'+
+							'<li class="" >'+
+								'<a class="" href="#">About |</a>'+
+							'</li>'+
+							'<li class="">'+
+								'<a class="" href="#">Contact Us |</a>'+
+							'</li>'+
+							'<li class="">'+
+								'<a class="" href="#">Term of Use |</a>'+
+							'</li>'+
+							'<li class="">'+
+								'<a class="" href="#">Policy |</a>'+
+							'</li>'+
+						'</ul>'+
+					'</nav>'+
+
+						'<p>CSprojectportal.com<p>'+
+
 			'</div>';
 		 
 
