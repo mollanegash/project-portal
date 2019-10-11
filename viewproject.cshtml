@@ -1,10 +1,12 @@
 @{
-    var mProjectNumber = Request.QueryString.Get("projectId");
+    var mProjectNumber = "0";
+	mProjectNumber = Request.QueryString.Get("projectId");
+	if (mProjectNumber == null) {mProjectNumber = "0";}
 	
 	var db = Database.Open("computerscienceprojectportal");
-    var selectQueryString = "select * from computerscienceprojectportal.computerscienceprojectportal.PROJECT WHERE ProjectNumber = " + mProjectNumber;
+    var selectQueryString = "select * from computerscienceprojectportal.computerscienceprojectportal.PROJECT WHERE ProjectNumber = " + int.Parse(mProjectNumber);
 	
-	db.Query(selectQueryString);
+	//db.Query(selectQueryString);
 
 
 }
@@ -58,12 +60,12 @@
 			  	@foreach(var row in db.Query(selectQueryString)){
 					
 					<p>
-					Project Number: @row.ProjectNumber <br>  
-					Project Name: @row.ProjectName <br>
-					Project Description: @row.ProjectDescription <br>
-					Authors: @row.Authors  <br>
-					UploadDate: @row.UploadDate <br>
-					ProjectTag1: @row.ProjectTag1 
+					Project Numbers: @row.ProjectNumber <br>  
+					Project Names: @row.ProjectName <br>
+					Project Descriptions: @row.ProjectDescription <br>
+					Authorss: @row.Authors  <br>
+					UploadDates: @row.UploadDate <br>
+					ProjectTags: @row.ProjectTag1 
 					
 					</p>
 					

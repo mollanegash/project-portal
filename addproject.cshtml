@@ -27,10 +27,10 @@
         // with the VALUES keyword.
         if(ModelState.IsValid) {
             var insertQuery = "INSERT INTO computerscienceprojectportal.computerscienceprojectportal.PROJECT " +
-                "VALUES (@0, @1, @2, @3, @4,@5)";
+                "VALUES (@0, @1, @2, @3, @4, @5)";
             db.Execute(insertQuery, ProjectNumber, ProjectName, ProjectDescription, Authors, UploadDate, ProjectTag1);
             // Display the page that lists products.
-            Response.Redirect("viewproject.cshtml");
+            Response.Redirect("searchresults.cshtml");
         }
     }
 }
@@ -122,7 +122,7 @@
 		      <div id="rowk" class="form-group">
 		        <div class="row">
 					<div class="col-sm">
-		        		<button class="button float-right" type="submit" id="submit">Add Project</button>
+		        		<button class="button float-right" type="submit">Add Project</button>
 		        	</div>
 		        </div>
 		      </div>
