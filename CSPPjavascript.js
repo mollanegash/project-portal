@@ -150,8 +150,7 @@
 			killatend = true;
 		} else {
 			document.getElementById("ProjectDescription-error").innerHTML = "";
-		}
-		
+		}		
 		if (Authors.value.length < 2) {
 			document.getElementById("Authors-error").innerHTML = "^^Sorry: Love Life Now must contain more than two (2) characters.";
 			Authors.focus();
@@ -176,16 +175,9 @@
 			document.getElementById("ProjectTag1-error").innerHTML = "";
 		}
 		
-	
-		
 		if (killatend != false){
-			return false
-		} 
+			return false;
+		}
 		return true;
 	}
-	
-	
-
-
-	  
- 
+}
