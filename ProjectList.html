@@ -35,20 +35,12 @@
 
   <main>
     <div class="container container-serach">
-      <div id="imgRowHomePage" class="row">
+      <div id="imgRowHomePage" >
         <h1 class="pageintroduction">Project Lists</h1>
       </div>
       <div id="MainProjectsList">
         @foreach(var row in db.Query(selectQueryString)){
           <div  class="row search-box">
-              <div class="btn-list">
-                <form class="btn-list-form action="" method="post">
-                  <input class="btn btn-secondary btn-list" name="ProjectNumberRemove=@row.ProjectNumber" type="submit" value="Remove" />
-                </form>
-                <form class="btn-list-form action="" method="post">
-                  <input class="btn btn-secondary btn-list" name="ProjectNumberView=@row.ProjectNumber" type="submit" value="View" />
-                </form>
-              </div>
             <div class="list-display">
               <label for="projectName" class ="listLabel">Project Number: </label>@row.ProjectNumber <br>
               <label for="projectName" class ="listLabel">Project Name: </label>@row.ProjectName <br>
@@ -56,11 +48,18 @@
               <label for="projectName" class ="listLabel">Authors:</label> @row.Authors  <br>
               <label for="projectName" class ="listLabel">UploadDate: </label>@row.UploadDate <br>
               <label for="projectName" class ="listLabel">ProjectTag1:</label> @row.ProjectTag1<br>
-              <hr>
             </div>
+                <div class="btn-list">
+                  <form class="btn-list-form action="" method="post">
+                    <input class="btn btn-secondary btn-list" name="ProjectNumberRemove=@row.ProjectNumber" type="submit" value="Remove" />
+                  </form>
+                  <form class="btn-list-form action="" method="post">
+                    <input class="btn btn-secondary btn-list" name="ProjectNumberView=@row.ProjectNumber" type="submit" value="View" />
+                  </form>
+                  <hr>
+                </div>
           </div>
         }
-        <div>
         </div>
       </div>
 
