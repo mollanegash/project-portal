@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,6 +16,7 @@
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
 	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
 	crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=Be+Vietnam&display=swap" rel="stylesheet">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
@@ -30,70 +32,49 @@
 <body>
 	<header>
 		<!-- DOM innerHTML logo text -->
-		<div id="universal-header">
-			<div class="container-header">
-				<img class ="cs-logo" src="Logo.png" alt="cs-portal-logo">
-				<h1 class="logo-header text-center">Computer Science Project Portal</h1>
-			</div>
-			<h3 class="sub-logo-header">CS673 Team 4</h3>
-		</div>
-		<!-- 	<div><a href="emailsent.html">Check the 'email sent' page</a></div> -->
+		<div id="universal-header"></div>
+
 		<!-- DOM innerHTML navigation bar -->
-		<div id="universal-navbar">
-			<div class="container-fluid">
-				<nav>
-					<ul class="nav  nav-ul-head nav-fill">
-						<li class="nav-item nav-1">
-							<a class=" nav-head" href="index.html">Home</a>'
-						</li>
-					</ul>
-				</nav>
-			</div>
-		</div>
-		<!--[if lt IE 9]>
-		<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-		<![endif]-->
+		<div id="universal-navbar"></div>
+
 	</header>
 
 	<main >
-		<div class="container">
-			<div class="container-search btn-search ">
+		<main class="wrapper">
+			<div class="container container-fluid">
+				<form class="form-container">
+					<div class="form-group">
+						<label for="exampleInputEmail1" class="form-label">Email address</label>
+						<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
 
+					</div>
+					<div class="form-group">
+						<label for="exampleInputPassword1" class="form-label">Password</label>
+						<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+					</div>
+					<div class="">
+						<label class=""><a href="">Forgot your password ? </a></label>
+					</div>
+					<div class="btn-submit">
+							<button type="submit" class=" enterBtn btn btn-dark">Enter Now</button>
+							<button class="loginBtn loginBtn--google">
+								Sign in with Google account
+							</button>
+
+					</div>
+
+				</form>
 			</div>
-		</div>
+
+		</main>
 
 
 	</main>
 
 	<footer>
-		<div class="container-fluid">
-			<nav class="navbar navbar-expand-sm ">
-				<ul class="navbar-nav nav-footer">
-					<li class="nav-item" >
-						<a class="nav-link" href="#">About |</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="#">Contact Us |</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="#">Term of Use |</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="#">Policy |</a>
-					</li>
-				</ul>
-			</nav>
-			<div class="right-footer">
-				<p>&copy; 2019     CSprojectportal.com<p>
-				</div>
+		<!-- DOM innerHTML footer -->
+		<div id="universal-footer"></div>
+	</footer>
 
-			</div>
-
-
-
-		</footer>
-
-
-	</body>
-	</html>
+</body>
+</html>
