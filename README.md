@@ -3,7 +3,7 @@ The Computer Science Project Portal provides a scalable, integrated platform for
 
 ## Technology Used
 This project will be a web based full stack application. Hosted currently at this domain:
-http://computerscienceprojectportal.com.parsley.arvixe.com/index.html
+http://computerscienceprojectportal.com/
 
 Our front end is written primarily in C# and connects to our backend via (what do we use for backend?). Users can upload new projects that will be validated and stored in our database for other users to search via key words and authors.  
 
