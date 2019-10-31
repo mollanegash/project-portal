@@ -2,35 +2,38 @@
 //Onload  // DOM innerHTML stuff
 window.onload = function() {
 
-
 	document.getElementById("universal-navbar").innerHTML =
 	'<div class="container-fluid">'+
-	'<nav>'+
-	'<ul class="nav nav-fill">'+
+	'<nav class="navbar">'+
+	'<img class ="cs-logo" src="Logo.png" alt="cs-portal-logo">'+
+	'<button  class="navbar-toggler " type="button" data-toggle="collapse" data-target="#navbarTarget" aria-expanded="false">'
+	+ '<span class="icon-bar"></span> <span class="icon-bar"></span><span class="icon-bar"></span>'
+	+'</button>'+ '<div  id="navbarTarget" class="collapse">'+
+	'<ul class="nav nav-fill "   >'+
 	'<li class="nav-item">'+
-	'<a class="nav-link" href="index.html">Home</a>'+
+	'<a class="nav-link nav-home" href="index.html" >Home</a>'+
 	'</li>'+
 	'<li class="nav-item">'+
-	'<a class="nav-link" href="addproject.cshtml">Add Project</a>'+
+	'<a class="nav-link nav-add-project" href="addproject.cshtml">Add Project</a>'+
 	'</li>'+
 	'<li class="nav-item">'+
-	'<a class="nav-link" href="searchresults.cshtml">Project Lists</a>'+
+	'<a class="nav-link nav-projectlist" href="searchresults.cshtml">Project List</a>'+
 	'</li>'+
 		'<li class="nav-item">'+
-		'<a class="nav-link" href="submitsearch.cshtml">Search Project</a>'+
+		'<a class="nav-link nav-submit" href="submitsearch.cshtml">Search Project</a>'+
 		'</li>'+
 	'</li>'+
 	'<li class="nav-item">'+
 	'<a class="nav-link" href="sign-up.html">Signup</a>'+
 	'</li>'+
 	'</ul>'+
+	'</div>'
 	'</nav>'+
 	'</div>';
 
 	document.getElementById("universal-header").innerHTML =
 	'<div class="container-fluid">'+
 	'<div class="container-header">'+
-	'<img class ="cs-logo" src="Logo.png" alt="cs-portal-logo">'+
 	'<h1 class="logo-header text-center">Computer Science Project Portal</h1>'+
 	'</div>'+
 	'<h3 class="sub-logo-header">CS673 Team 4</h3>'+
@@ -39,7 +42,7 @@ window.onload = function() {
 
 	document.getElementById("universal-footer").innerHTML =
 	'<div class="container-fluid">'+
-	'<nav class="navbar  navbar-expand-sm >'+
+	'<nav class="navbar  nav-footer navbar-expand-sm >'+
 	' <ul class="navbar-nav nav-footer">'+
 	'<li class="nav-item " >'+
 	'<a class="nav-link nav-item-footer" href="#"> About </a>'+
