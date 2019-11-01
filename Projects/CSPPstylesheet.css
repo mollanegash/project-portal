@@ -220,9 +220,8 @@ body {
   margin: -5px  6% 0 10%;
 }
 
-.container-search {
-  margin-bottom: 25%;
-  margin-top: 15%;
+.container-serach {
+  margin-top: 10%;
 }
 
 .row {
@@ -231,6 +230,10 @@ body {
 
 .btn-search{
   text-align: center;
+}
+
+.search-box {
+  margin-bottom: 30px;
 }
 
 .search-item-button {
@@ -365,6 +368,22 @@ body {
   display: flex;
 }
 
+.addMain{
+  margin-top: 10%
+}
+
+.pageintroduction{
+  text-align:  center;
+  margin-bottom:  5%;
+}
+
+#formWrapper {
+  margin-bottom: 20%;
+}
+
+.label-Project{
+  width: 350px;
+}
 
 @media (max-width: 991px) {
   .navbar-toggler span {
