@@ -1,0 +1,478 @@
+
+body {
+    font-family: 'Be Vietnam', sans-serif;
+    width: 100%;
+    margin: 0;
+}
+
+#universal-header {
+    text-align: center;
+    color: #211a58;
+    margin-top: 100px;
+}
+
+.header-banner {
+    background: url("../Images/home-banner.jpg")no-repeat center;
+    background-size: cover;
+    position: relative;
+    min-height: 900px;
+    top: 0;
+    left: 0;
+    padding-right: 100px;
+    padding-left: 100px;
+    margin-right: auto;
+    margin-left: auto;
+    width: 100%;
+}
+
+::placeholder {
+    color: #D3D3D3 !important;
+}
+
+.nav-ul-head {
+    height: 60px;
+}
+
+.customFormErrorText {
+    color: red;
+    padding-bottom: .7rem;
+}
+
+.headerimg {
+    margin-top: 10%;
+}
+
+.button {
+    font-size: 20pt;
+    padding: 7px;
+    border: 1px solid #525050;
+    border-radius: .5em;
+    font-family: Lato, sans-serif;
+    background-color: #E6DEF6;
+    cursor: pointer;
+}
+
+    /* 1em = 10px Only one here with purple shadow - was - box-shadow: 0px 15px 20px #d7caf1; */
+    .button:hover {
+        box-shadow: 4px 12px 20px #525050;
+    }
+
+.btntxtsmall {
+    font-size: 12pt;
+    padding: 4px;
+}
+
+.universal-services {
+    background-color: #f6e6de;
+}
+
+.container-header {
+    display: block;
+}
+
+.wrapper {
+    margin-top: 10%;
+}
+
+.form-container {
+    width: 50%;
+    margin: 0 auto;
+    margin-bottom: 20%;
+    margin-top: 5%;
+}
+
+.makeWidth {
+    width: 100%;
+}
+
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.nav-fill > .nav-1 {
+    text-align: left;
+    margin-left: 5%;
+}
+
+.nav-fill > .nav-2 {
+    text-align: right;
+    ;
+    margin-right: 5%;
+}
+
+.nav-head {
+    color: #fefbf9;
+    font-family: 'Be Vietnam', sans-serif;
+    font-size: 25pt;
+}
+
+    .nav-head:hover {
+        background-color: #FFFFFF;
+        color: #rgb(211, 213, 202);
+        text-decoration: none;
+    }
+
+.nav-link:hover {
+    color: rgb(215, 205, 18);
+}
+
+.nav-link:active {
+    color: rgb(215, 205, 18);
+}
+
+.nav-link {
+    color: rgb(37, 31, 121);
+    font-size: 16px;
+    font-weight: bold;
+    font-family: 'Be Vietnam', sans-serif;
+}
+
+.logo-header {
+    color: #211a58;
+    text-transform: uppercase;
+    font-family: 'Be Vietnam', sans-serif;
+    font-size: 50pt;
+    padding-top: 4%;
+    font-weight: 900;
+}
+
+.tinyheader {
+    font-size: 12pt;
+    font-family: Lato, sans-seri;
+}
+
+.sub-logo-header {
+    margin: 1%;
+    font-family: 'Be Vietnam', sans-serif;
+    font-size: 30pt;
+    text-align: center;
+    color: rgb(215, 205, 18);
+}
+
+.cs-logo {
+    display: inline-block;
+    margin-top: 3%;
+    width: 50px;
+}
+
+/* Shared */
+.loginBtn {
+    box-sizing: border-box;
+    position: relative;
+    /* width: 13em;  - apply for fixed size */
+    padding: 0 15px 0 46px;
+    border: none;
+    text-align: left;
+    line-height: 40px;
+    white-space: nowrap;
+    border-radius: 0.2em;
+    font-size: 16px;
+    color: #FFF;
+}
+
+    .loginBtn:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 38px;
+        height: 100%;
+    }
+
+    .loginBtn:focus {
+        outline: none;
+    }
+
+    .loginBtn:active {
+        box-shadow: inset 0 0 0 32px rgba(0,0,0,0.1);
+    }
+
+/* Google */
+.loginBtn--google {
+    /*font-family: "Roboto", Roboto, arial, sans-serif;*/
+    background: #DD4B39;
+    height: 48px;
+    width: 150px;
+}
+
+    .loginBtn--google:before {
+        border-right: #BB3F30 1px solid;
+        background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/14082/icon_google.png') 8px 8px no-repeat;
+    }
+
+    .loginBtn--google:hover,
+    .loginBtn--google:focus {
+        background: #E74B37;
+    }
+
+.loginTitle {
+    text-align: center;
+    text-transform: uppercase;
+    color: rgb(35, 22, 136);
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.enterBtn {
+    font-size: 16px;
+    margin: -5px 6% 0 10%;
+}
+
+.container-serach {
+    margin-top: 10%;
+}
+
+.row {
+    padding-left: 20%;
+}
+
+.btn-search {
+    text-align: center;
+}
+
+.search-box {
+    margin-bottom: 30px;
+}
+
+.search-item-button {
+    margin-top: 30px;
+    margin-left: 6%;
+    margin-right: 6%;
+    text-align: center;
+    width: 180px;
+}
+
+.form2{
+    background-color: #6ba4c7;
+}
+
+.form-group {
+    display: flex;
+}
+
+.control-label {
+    width: 250px;
+}
+
+.btn-form {
+    margin-left: 36%;
+}
+
+.errorText{
+    color: red;
+    text-align:left;
+    font-weight: bold;
+}
+
+.btn {
+    width: 150px;
+    height: 48px;
+}
+
+.btn-submit {
+    text-align: center;
+    margin-top: 5%;
+}
+
+.nav-item {
+    list-style-type: none;
+}
+
+.nav-footer {
+    justify-content: center;
+}
+
+.nav-item-footer {
+    color: rgb(215, 205, 18);
+    font-size: 16px;
+    list-style-type: none;
+}
+
+.footer-bg {
+    background-color: rgb(35, 39, 89);
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.footer {
+    font-family: Brilliants, sans-seri;
+    font-size: 21pt;
+    padding-top: 1rem;
+    margin-top: 25%;
+}
+
+.right-footer {
+    text-align: center;
+    color: rgb(215, 205, 18);
+    font-weight: bold;
+}
+
+#dLabel {
+    width: 100%;
+    height: 40px;
+    border-radius: 4px;
+    background-color: #fff;
+    border: solid 1px #cccccc;
+    text-align: left;
+    padding: 7.5px 15px;
+    color: #ccc;
+    letter-spacing: 0.7px;
+}
+
+.caret {
+    float: right;
+    margin-top: 9px;
+    display: block;
+}
+
+.dropdown-menu {
+    width: 240px;
+    padding: 0;
+    margin: 0;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+.dropdown button:hover, .dropdown button:focus {
+    border: none;
+    outline: 0;
+}
+
+.dropdown.open button#dLabel {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.23);
+    border: solid 1px #666;
+    border-bottom: none;
+}
+
+.dropdown.open ul {
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.23);
+    border: solid 1px #666;
+    border-top: none;
+    height: 200px;
+    overflow-y: scroll;
+}
+
+.dropdown-menu li {
+    line-height: 1.5;
+    letter-spacing: 0.7px;
+    color: #666;
+    font-size: 14px;
+    cursor: pointer;
+    padding: 7.5px 15px;
+    border-top: solid 1px #f3f3f3;
+}
+
+    .dropdown-menu li:hover {
+        background-color: #ccc;
+    }
+
+
+.form-label {
+    width: 200px;
+}
+
+.collapse:not(.show) {
+    display: flex;
+}
+
+.addMain {
+    margin-top: 10%
+}
+
+.pageintroduction {
+    text-align: center;
+    margin-bottom: 5%;
+}
+
+#formWrapper {
+    margin-bottom: 20%;
+}
+
+.projectMain{
+    margin-top: 5%;
+}
+
+.label-Project {
+    width: 350px;
+}
+
+@media (max-width: 991px) {
+    .navbar-toggler span {
+        display: block;
+        width: 25px;
+        height: 3px;
+        background: #fdc632;
+        margin: auto;
+        margin-bottom: 4px;
+        transition: all 400ms linear;
+        cursor: pointer;
+    }
+
+    .collapse:not(.show) {
+        display: none;
+    }
+
+    .header-banner {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    #universal-navbar {
+        background-color: rgb(115, 116, 119);
+    }
+
+    #navbarTarget {
+        opacity: 0.8;
+        width: 100%;
+    }
+
+    .nav-link {
+        text-align: left;
+        border-bottom: 2px solid rgb(53, 52, 54);
+    }
+
+    .nav-fill {
+        flex-direction: column;
+    }
+
+    .form-container {
+        width: 80%;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-fill {
+        font-size: 25px;
+    }
+
+    .logo-header {
+        font-size: 40px;
+        font-weight: bold;
+    }
+}
+
+
+@media (max-width: 450px) {
+    .enterBtn {
+        margin-bottom: 30px;
+    }
+
+    .loginBtn {
+        margin-left: 10px;
+    }
+}
+
+@font-face {
+    font-family: Brilliants;
+    src: url(Brilliantsignature1regular.otf) format("opentype");
+}
+
+@font-face {
+    font-family: Lato, sans-serif;
+    src: url(Lato-Light.ttf) format("truetype");
+}
