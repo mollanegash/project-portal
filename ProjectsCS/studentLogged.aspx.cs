@@ -24,13 +24,13 @@ namespace TestForm.ProjectsCS
             {
                 UserLabel1.Text = name;
             }
-
         }
 
         protected void logoutEventMethod(object sender, EventArgs e)
         {
             Session["Fname"] = null;
             Session.Abandon();
+            Response.Redirect("index.aspx");
         }
 
         protected void SubmitEventMethod(object sender, EventArgs e)

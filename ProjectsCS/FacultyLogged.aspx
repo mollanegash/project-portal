@@ -29,7 +29,7 @@
 	<link rel="stylesheet" href="CSS/CSPPstylesheet.css">
 
 	<script src="JS/jquery-3.3.1.js"></script>
-	<script src="JS/LoggedInJS.js"></script>
+	<script src="JS/FacultyLogged.js"></script>
 	<script src="JS/CSPPJQuery.js"></script>
 
 </head>

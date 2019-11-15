@@ -29,6 +29,7 @@ namespace TestForm.ProjectsCS
         {
             Session["Fname"] = null;
             Session.Abandon();
+            Response.Redirect("index.aspx");
         }
     }
 }
