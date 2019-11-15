@@ -1,7 +1,7 @@
 # cs673-project-team-4
 cs673-project-team-4 created by GitHub Classroom
 
-#For better understanding how the automated testing implemetation
+#For better understanding how the automated testing implemeted
 
 #Sample Login 
 
