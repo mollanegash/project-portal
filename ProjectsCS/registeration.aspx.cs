@@ -49,8 +49,8 @@ namespace TestForm
                 cmd.CommandType = CommandType.Text;
 
                 //link a database table from user info from the input
-                cmd.CommandText = "insert into USERTABLE (Fname, Lname,School,email,Password)" +
-                    "values(@Fname,@Lname,@School,@email,@Password)";
+                cmd.CommandText = "insert into USERTABLE (Fname, Lname,School,email,Password,RoleType)" +
+                    "values(@Fname,@Lname,@School,@email,@Password,@RoleType)";
 
                 //add value to each column 
                 cmd.Parameters.AddWithValue("@Fname", firstnameTextBox.Text);
@@ -58,7 +58,18 @@ namespace TestForm
                 cmd.Parameters.AddWithValue("@School", schoolTextBox.Text);
                 cmd.Parameters.AddWithValue("@email", usernameTextBox.Text);
 
-
+                if(DropDownList1.SelectedValue == "Student")
+                {
+                    cmd.Parameters.AddWithValue("@RoleType", DropDownList1.SelectedValue);
+                }
+                else if (DropDownList1.SelectedValue == "Faculty")
+                {
+                    cmd.Parameters.AddWithValue("RoleType", DropDownList1.SelectedValue);
+                }
+                else
+                {
+                    lblErrorMessage.Text = "Please select occupation";
+                }
                 //process to hash password to store in sql
                 String saltHashReturned = PasswordHash.CreateHash(passwordTextBox.Text);
                 int commaIndex = saltHashReturned.IndexOf(":");

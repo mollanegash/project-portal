@@ -267,6 +267,30 @@ body {
     font-weight: bold;
 }
 
+.container-search-form {
+    width: 70%;
+    margin-bottom: 10%;
+}
+
+
+.pageintroduction {
+    margin-top: 7%;
+    margin-bottom: 5%;
+    text-align: center;
+}
+
+.search-form-label {
+    width: 300px;
+}
+
+#rowi {
+    margin-bottom: 5%;
+}
+
+.btn-search-form {
+    margin-left: 1%;
+}
+
 .btn {
     width: 150px;
     height: 48px;
@@ -382,11 +406,6 @@ body {
 
 .addMain {
     margin-top: 10%
-}
-
-.pageintroduction {
-    text-align: center;
-    margin-bottom: 5%;
 }
 
 #formWrapper {
