@@ -45,7 +45,7 @@
 		<main class="wrapper">
 			<div class="container container-fluid">
 				<div class="loginTitle">
-					Account Login
+					Account Login (Test)
 				</div>
 				<form class="form-container" runat="server">
 					<div class="form-group">
@@ -59,7 +59,7 @@
 					</div>
                     <div class="errorText" style="text-align:center">
                         <asp:Label ID="errorLogin" runat="server" Text=""></asp:Label>
-                    </div>                
+                    </div>
 					<div  >
 						<label class=""><a href="">Forgot your password ? </a></label>
 					</div>
@@ -83,4 +83,3 @@
 
 </body>
 </html>
-
