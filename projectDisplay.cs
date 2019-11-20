@@ -5,7 +5,7 @@ using System.Web;
 
 namespace TestForm.ProjectsCS
 {
-    public class projectDisplay
+    public class ProjectDisplay
     {
         public int UserID { get; set; }
         public int P_ID { get; set; }
@@ -15,6 +15,5 @@ namespace TestForm.ProjectsCS
         public String P_Name { get; set; }
         public String Desprip { get; set; }
 
-        public List<projectDisplay> userinfo { get; set; }
     }
 }
