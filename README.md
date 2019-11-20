@@ -20,7 +20,6 @@ Since this is a web based application there is no installation necessary (outsid
 ## Team
 Zachary Kysar,
 Connor Richmond,
-Juan Scanchez,
+Juan Sanchez,
 Rattikarn Dudley,
 and Molla Negash
-
