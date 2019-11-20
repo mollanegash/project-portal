@@ -11,6 +11,28 @@ body {
     margin-top: 100px;
 }
 
+.lblStyle {
+    padding-left: 40px;
+}
+
+.auto-style {
+    width: 355px;
+}
+
+.auto-style7 {
+    width: 355px;
+}
+
+.modalBackground {
+    color: white;
+    position: absolute;
+    z-index: -1;
+}   
+
+.auto-style10 {
+    text-align: center;
+}
+
 .header-banner {
     background: url("../Images/home-banner.jpg")no-repeat center;
     background-size: cover;
@@ -245,7 +267,7 @@ body {
     width: 180px;
 }
 
-.form2{
+.form2 {
     background-color: #6ba4c7;
 }
 
@@ -261,9 +283,9 @@ body {
     margin-left: 36%;
 }
 
-.errorText{
+.errorText {
     color: red;
-    text-align:left;
+    text-align: left;
     font-weight: bold;
 }
 
@@ -412,12 +434,18 @@ body {
     margin-bottom: 20%;
 }
 
-.projectMain{
+.projectMain {
     margin-top: 5%;
 }
 
 .label-Project {
     width: 350px;
+}
+
+.table-container {
+    width: 100%;
+    margin: auto;
+    margin-top: 10px;
 }
 
 @media (max-width: 991px) {
