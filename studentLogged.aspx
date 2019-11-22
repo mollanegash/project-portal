@@ -1,5 +1,4 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="studentLogged.aspx.cs" Inherits="TestForm.ProjectsCS.LoggedIn " %>
-
 <%@ Register Assembly="AjaxControlToolKit" Namespace="AjaxControlToolkit" TagPrefix="ajax" %>
 
 <!DOCTYPE html>
@@ -43,8 +42,8 @@
         <form id="form1" runat="server">
             <div>
                 <p>Hello Student</p>
-                <asp:Button ID="UserLabel1" runat="server" Text="No user" OnClick="EditProfile_click" />
-                <asp:Button ID="loggoutButton" runat="server" Text="Logout" OnClick="logoutEventMethod" />
+                <asp:Button ID="lbluser" runat="server" Text="No user" onclick="EditUser_click"  />
+                <asp:Button ID="loggoutButton" runat="server" Text="Logout" onclick="logoutEventMethod" />
                 <div class="table-container">
                     <asp:ScriptManager ID="ScriptManager1" EnableScriptGlobalization="true" runat="server"></asp:ScriptManager>
 
@@ -77,13 +76,13 @@
                                     <asp:Button ID="EditButton1" runat="server" Height="40px"
                                         Width="150px" Text="Edit" OnClick="Edit_Click" />
                                 </ItemTemplate>
-                            </asp:TemplateField>
+                            </asp:TemplateField>  
                             <asp:TemplateField>
                                 <ItemTemplate>
                                     <asp:Button ID="DeleteButton1" runat="server" Height="40px"
                                         Width="150px" Text="Delete" OnClick="DeleteProject_Click" />
                                 </ItemTemplate>
-                            </asp:TemplateField>
+                            </asp:TemplateField> 
 
                         </Columns>
                         <FooterStyle BackColor="#99CCCC" ForeColor="#003399" />
@@ -143,8 +142,8 @@
                         <table class="w-100">
                             <tr>
                                 <td class="auto-style10">
-                                    <asp:Button ID="Button2" runat="server" Text="Edit" OnClick="EditClick" Width="140px" />
-                                </td>
+                                    <asp:Button ID="Button2" runat="server" Text="Enter" OnClick="EnterClick" Width="140px" />
+                                </td>                              
                                 <td class="auto-style10">
                                     <asp:Button ID="Button3" runat="server" Text="CANCLE" Width="140px" />
                                 </td>

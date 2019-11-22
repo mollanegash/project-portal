@@ -107,10 +107,5 @@ namespace TestForm
             {
             }
         }
-
-        protected void ResetPass_click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

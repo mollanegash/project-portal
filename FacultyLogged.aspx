@@ -43,7 +43,7 @@
         <form id="form1" runat="server">
             <div>
                 <p>Hello Faculty</p>
-                <asp:Button ID="UserLabel1" runat="server" Text="No user" />
+                <asp:Button ID="UserLabel1" runat="server" Text="No user" OnClick="FacProfile_click" style="height: 35px" />
                 <asp:Button ID="loggoutButton" runat="server" Text="Logout" OnClick="logoutEventMethod" />
                 <div class="table-container">
                     <h4 class="text-center sub-logo-header">Student Projects</h4>

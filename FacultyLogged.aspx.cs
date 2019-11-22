@@ -90,7 +90,7 @@ namespace TestForm.ProjectsCS
             if (reader.HasRows && reader.Read())
             {
                 System.Web.HttpContext.Current.Response.Write("<SCRIPT LANGUAGE='JavaScript'>\n");
-                System.Web.HttpContext.Current.Response.Write("alert(\"" + "Already Added Current Supervisee" + "\")\n");
+                System.Web.HttpContext.Current.Response.Write("alert(\"" + "Already had a Superviser" + "\")\n");
                 System.Web.HttpContext.Current.Response.Write("</SCRIPT>");
                 con.Close();
             }
@@ -117,6 +117,12 @@ namespace TestForm.ProjectsCS
             }
 
         }
+
+       protected void FacProfile_click(object sender, EventArgs e)
+        {
+           Response.Redirect("FacultyProfile.aspx");
+        }
+        
     }
 
 }

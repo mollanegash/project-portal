@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Windows.Forms;
 using System.Web;
 using System.Web.UI;
 using System.Web.Script.Services;
@@ -31,7 +32,7 @@ namespace TestForm.ProjectsCS
             }
             else
             {
-                UserLabel1.Text = name;
+                lbluser.Text = name;
 
                 if (!IsPostBack)
                 {
@@ -49,37 +50,7 @@ namespace TestForm.ProjectsCS
             Response.Redirect("index.aspx");
         }
 
-        /*protected void SubmitEventMethod(object sender, EventArgs e)
-        {
-
-            SqlCommand cmd = con.CreateCommand();
-            cmd.CommandType = CommandType.Text;
-
-            userID = (int)Session["U_ID"];
-            con.Open();
-            cmd.CommandText = "insert into PROJECT2 VALUES (@P_Name,@UploadDate,@Link,@Tag,@Descrip,@UserID)";
-
-            cmd.Parameters.AddWithValue("@P_Name", ProjectNameBox.Text);
-            cmd.Parameters.AddWithValue("@UploadDate", uploadBox.Text);
-            cmd.Parameters.AddWithValue("@Link", LinkBox.Text);
-            cmd.Parameters.AddWithValue("@Tag", projectTagBox.Text);
-            cmd.Parameters.AddWithValue("@Descrip", projectDesBox.Text);
-            cmd.Parameters.AddWithValue("@UserID", userID);
-
-            cmd.ExecuteNonQuery();
-
-            //clear text
-            ProjectNameBox.Text = "";
-            uploadBox.Text = "";
-            LinkBox.Text = "";
-            projectDesBox.Text = "";
-            projectTagBox.Text = "";
-
-            // to notify the add project is success
-            Dis_data();
-
-        }*/
-
+        
         public void Dis_data()
         {
             userID = (int)Session["U_ID"];
@@ -119,34 +90,8 @@ namespace TestForm.ProjectsCS
 
         }
 
-        protected void EditClick(object sender, EventArgs e)
-        {
+       
 
-           SqlCommand cmd = con.CreateCommand();
-           cmd.CommandType = CommandType.Text;
-
-           con.Open();
-           cmd.CommandText = "UPDATE PROJECT2 SET " 
-                                  + "P_Name = @P_Name, "
-                                  + "UploadDate = @UploadDate, "
-                                  + "Link = @Link, "
-                                  + "Tag = @Tag, "
-                                  + "Descrip = @Descript "
-                                  + " WHERE P_ID = " + projectID;
-
-            cmd.Parameters.AddWithValue("@P_Name", TextBox1.Text);
-            cmd.Parameters.AddWithValue("@UploadDate", TextBox2.Text);
-            cmd.Parameters.AddWithValue("@Link", TextBox3.Text);
-            cmd.Parameters.AddWithValue("@Tag", TextBox4.Text);
-            cmd.Parameters.AddWithValue("@Descript", TextBox5.Text);
-
-            cmd.ExecuteNonQuery();
-
-            //refresh page to show th actual result
-            Response.Redirect("studentLogged.aspx");
-
-            con.Close();
-        }
         protected void DeleteProject_Click(object sender, EventArgs e)
         {
             SqlCommand std = con.CreateCommand();
@@ -166,9 +111,38 @@ namespace TestForm.ProjectsCS
             con.Close();
         }
 
-        protected void EditProfile_click(object sender, EventArgs e)
+        protected void EnterClick(object sender, EventArgs e)
         {
+            SqlCommand cmd = con.CreateCommand();
+            cmd.CommandType = CommandType.Text;
 
+            con.Open();
+            cmd.CommandText = "UPDATE PROJECT2 SET "
+                                   + "P_Name = @P_Name, "
+                                   + "UploadDate = @UploadDate, "
+                                   + "Link = @Link, "
+                                   + "Tag = @Tag, "
+                                   + "Descrip = @Descript "
+                                   + " WHERE P_ID = " + projectID;
+
+            cmd.Parameters.AddWithValue("@P_Name", TextBox1.Text);
+            cmd.Parameters.AddWithValue("@UploadDate", TextBox2.Text);
+            cmd.Parameters.AddWithValue("@Link", TextBox3.Text);
+            cmd.Parameters.AddWithValue("@Tag", TextBox4.Text);
+            cmd.Parameters.AddWithValue("@Descript", TextBox5.Text);
+
+            cmd.ExecuteNonQuery();
+
+            //refresh page to show th actual result
+            Response.Redirect("studentLogged.aspx");
+
+            con.Close();
+        }
+
+        public void EditUser_click(object sender, EventArgs e)
+        {
+            Response.Redirect("StudentProfile.aspx");
+                
         }
     }
 }
