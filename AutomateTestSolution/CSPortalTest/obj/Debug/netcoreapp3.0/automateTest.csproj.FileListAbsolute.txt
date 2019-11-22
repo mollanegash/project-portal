@@ -1,0 +1,15 @@
+C:\Users\Soy\source\repos\CSPortalTest\CSPortalTest\bin\Debug\netcoreapp3.0\automateTest.exe
+C:\Users\Soy\source\repos\CSPortalTest\CSPortalTest\obj\Debug\netcoreapp3.0\automateTest.csprojAssemblyReference.cache
+C:\Users\Soy\source\repos\CSPortalTest\CSPortalTest\obj\Debug\netcoreapp3.0\automateTest.AssemblyInfoInputs.cache
+C:\Users\Soy\source\repos\CSPortalTest\CSPortalTest\obj\Debug\netcoreapp3.0\automateTest.AssemblyInfo.cs
+C:\Users\Soy\source\repos\CSPortalTest\CSPortalTest\bin\Debug\netcoreapp3.0\nunit.framework.dll
+C:\Users\Soy\source\repos\CSPortalTest\CSPortalTest\obj\Debug\netcoreapp3.0\automateTest.csproj.CopyComplete
+C:\Users\Soy\source\repos\CSPortalTest\CSPortalTest\bin\Debug\netcoreapp3.0\automateTest.deps.json
+C:\Users\Soy\source\repos\CSPortalTest\CSPortalTest\bin\Debug\netcoreapp3.0\automateTest.runtimeconfig.json
+C:\Users\Soy\source\repos\CSPortalTest\CSPortalTest\bin\Debug\netcoreapp3.0\automateTest.runtimeconfig.dev.json
+C:\Users\Soy\source\repos\CSPortalTest\CSPortalTest\bin\Debug\netcoreapp3.0\automateTest.dll
+C:\Users\Soy\source\repos\CSPortalTest\CSPortalTest\bin\Debug\netcoreapp3.0\automateTest.pdb
+C:\Users\Soy\source\repos\CSPortalTest\CSPortalTest\bin\Debug\netcoreapp3.0\Newtonsoft.Json.dll
+C:\Users\Soy\source\repos\CSPortalTest\CSPortalTest\bin\Debug\netcoreapp3.0\WebDriver.dll
+C:\Users\Soy\source\repos\CSPortalTest\CSPortalTest\obj\Debug\netcoreapp3.0\automateTest.dll
+C:\Users\Soy\source\repos\CSPortalTest\CSPortalTest\obj\Debug\netcoreapp3.0\automateTest.pdb

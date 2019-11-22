@@ -45,7 +45,7 @@
 		<main class="wrapper">
 			<div class="container container-fluid">
 				<div class="loginTitle">
-					Account Login (Test)
+					Account Login
 				</div>
 				<form class="form-container" runat="server">
 					<div class="form-group">
@@ -69,10 +69,8 @@
 								Google
 							</button>
 					</div>
-
 				</form>
 			</div>
-
 		</main>
 	</main>
 
