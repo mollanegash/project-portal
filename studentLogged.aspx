@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="studentLogged.aspx.cs" Inherits="TestForm.ProjectsCS.LoggedIn " %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="studentLogged.aspx.cs" Inherits="TestForm.ProjectsCS.studentLogged" %>
 <%@ Register Assembly="AjaxControlToolKit" Namespace="AjaxControlToolkit" TagPrefix="ajax" %>
 
 <!DOCTYPE html>

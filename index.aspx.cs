@@ -107,5 +107,10 @@ namespace TestForm
             {
             }
         }
+
+        protected void ForgetPwd_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("ForgetPassword.aspx");
+        }
     }
 }
