@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Windows.Forms;
 using System.Web;
 using System.Web.UI;
 using System.Web.Script.Services;
@@ -14,7 +13,7 @@ using TestForm.ProjectsCS;
 
 namespace TestForm.ProjectsCS
 {
-    public partial class LoggedIn : System.Web.UI.Page
+    public partial class studentLogged : System.Web.UI.Page
     {
 
         private SqlConnection con = new SqlConnection(@"Data Source=parsley.arvixe.com;Initial Catalog=computerscienceprojectportal;Persist Security Info=True;User ID=computerscienceprojectportal;Password=team4CS673");
@@ -40,7 +39,7 @@ namespace TestForm.ProjectsCS
                 }
 
             }
-           
+
         }
 
         protected void logoutEventMethod(object sender, EventArgs e)
@@ -50,7 +49,7 @@ namespace TestForm.ProjectsCS
             Response.Redirect("index.aspx");
         }
 
-        
+
         public void Dis_data()
         {
             userID = (int)Session["U_ID"];
@@ -59,7 +58,7 @@ namespace TestForm.ProjectsCS
             cmd.CommandType = CommandType.Text;
 
             con.Open();
-            cmd.CommandText = "select * from PROJECT2 where UserID = " + userID ;
+            cmd.CommandText = "select * from PROJECT2 where UserID = " + userID;
             cmd.ExecuteNonQuery();
             DataTable dt = new DataTable();
             SqlDataAdapter da = new SqlDataAdapter(cmd);
@@ -90,7 +89,7 @@ namespace TestForm.ProjectsCS
 
         }
 
-       
+
 
         protected void DeleteProject_Click(object sender, EventArgs e)
         {
@@ -142,7 +141,9 @@ namespace TestForm.ProjectsCS
         public void EditUser_click(object sender, EventArgs e)
         {
             Response.Redirect("StudentProfile.aspx");
-                
+
         }
+
+
     }
 }

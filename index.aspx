@@ -61,7 +61,7 @@
                         <asp:Label ID="errorLogin" runat="server" Text=""></asp:Label>
                     </div>
 					<div  >
-						<label class=""><a href="">Forgot your password ? </a></label>
+                        <asp:LinkButton ID="linkButton1" runat="server" Onclick="ForgetPwd_Click">Forgot your password ?</asp:LinkButton>
 					</div>
 					<div class="btn-submit">
                             <asp:Button ID="submitButton" Text="Enter" class="enterBtn btn btn-dark" runat="server" onClick="SubmitEventMethod"/>

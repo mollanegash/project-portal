@@ -11,7 +11,7 @@ namespace TestForm.ProjectsCS
 {
 
 
-    public partial class LoggedIn
+    public partial class studentLogged
     {
 
         /// <summary>
