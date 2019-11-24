@@ -154,7 +154,7 @@
                         <table class="w-100">
                             <tr>
                                 <td class="auto-style10">
-                                    <asp:Button ID="Button3" runat="server" Text="CANCLE" Width="140px" OnClick="Button3_Click" />
+                                    <asp:Button ID="Button3" runat="server" Text="Close" Width="140px" OnClick="Button3_Click" />
                                 </td>
                             </tr>
                         </table>

@@ -15,9 +15,28 @@ namespace TestForm.ProjectsCS
 {
     public partial class ProjectList : System.Web.UI.Page
     { 
-        private SqlConnection con = new SqlConnection(@"Data Source=parsley.arvixe.com;Initial Catalog=computerscienceprojectportal;Persist Security Info=True;User ID=computerscienceprojectportal;Password=team4CS673");
+        private SqlConnection con2 = new SqlConnection(@"Data Source=parsley.arvixe.com;Initial Catalog=computerscienceprojectportal;Persist Security Info=True;User ID=computerscienceprojectportal;Password=team4CS673");
+		
+		protected string mProjectNameContainsString = string.Empty;
+    	protected string mProjectDescriptionContainsString = string.Empty;
+   		protected string mProjectTag1ContainsString = string.Empty;
+    	protected string selectQueryString = string.Empty;
+		protected string begginingQueryString = string.Empty;
+		protected string ProjectNameQueryString = string.Empty;
+		protected string ProjectDescriptionQueryString = string.Empty;
+		protected string ProjectTag1QueryString = string.Empty;
+		
+		protected int NotNullVariableCount = 0;
+		
+		
+		
         protected void Page_Load(object sender, EventArgs e)
         {
+			
+			mProjectNameContainsString = Request.QueryString.Get("projectname");
+    		mProjectDescriptionContainsString = Request.QueryString.Get("projectdescription");
+    		mProjectTag1ContainsString = Request.QueryString.Get("projecttag1");
+			
             if (!IsPostBack)
             {
                 Dis_data();
@@ -27,17 +46,77 @@ namespace TestForm.ProjectsCS
 
         public void Dis_data()
         {
+			
 
-            SqlCommand cmd = con.CreateCommand();
+    		begginingQueryString = "select * from PROJECT2 ";
+			
+			if (mProjectNameContainsString != "") {
+		
+				if (NotNullVariableCount == 0) {
+					ProjectNameQueryString = " WHERE ProjectName like '%" + mProjectNameContainsString + "%'";
+				}
+				else {
+					ProjectNameQueryString = " AND ProjectName like '%" + mProjectNameContainsString + "%'";
+				}
+				NotNullVariableCount++;
+			}
+		
+			if (mProjectDescriptionContainsString != "") {
+		
+				if (NotNullVariableCount == 0) {
+					ProjectDescriptionQueryString = " WHERE  ProjectDescription like '%" + mProjectDescriptionContainsString + "%'";
+				}
+				else {
+					ProjectDescriptionQueryString = " AND ProjectDescription like '%" + mProjectDescriptionContainsString + "%'";
+				}
+		
+				this.NotNullVariableCount = NotNullVariableCount+1;
+			}
+		
+		
+			if (mAuthorsContainsString != "") {
+		
+				if (NotNullVariableCount == 0) {
+					AuthorsQueryString = " WHERE  Authors like '%" + mAuthorsContainsString + "%'";
+				}
+				else {
+					AuthorsQueryString = " AND Authors like '%" + mAuthorsContainsString + "%'";
+				}
+		
+				this.NotNullVariableCount = NotNullVariableCount+1;
+			}
+		
+		
+			if (mProjectTag1ContainsString != "") {
+		
+				if (NotNullVariableCount == 0) {
+					ProjectTag1QueryString = " WHERE  ProjectTag1 like '%" + mProjectTag1ContainsString + "%'";
+				}
+				else {
+					ProjectTag1QueryString = " AND ProjectTag1 like '%" + mProjectTag1ContainsString + "%'";
+				}
+		
+				this.NotNullVariableCount = NotNullVariableCount+1;
+			}
+		
+		
+		
+			selectQueryString = begginingQueryString + ProjectNameQueryString + ProjectDescriptionQueryString + AuthorsQueryString + ProjectTag1QueryString;
+			
+			
+			
+			
+			SqlCommand cmd = con2.CreateCommand();
             cmd.CommandType = CommandType.Text;
-            con.Open();
-            cmd.CommandText = "SELECT * from PROJECT2";
+            con2.Open();
+			cmd.CommandText = selectQueryString; //I cannot get this sting to do anything, no matter waht I change it to, it always displays all projects?  
             cmd.ExecuteNonQuery();
             DataTable dt = new DataTable();
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             da.Fill(dt);
             EmpGridView.DataSource = dt;
             EmpGridView.DataBind();
+			con2.Close();
 
         }
 
