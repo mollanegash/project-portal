@@ -109,7 +109,7 @@ namespace TestForm.ProjectsCS
 			SqlCommand cmd = con2.CreateCommand();
             cmd.CommandType = CommandType.Text;
             con2.Open();
-			cmd.CommandText = "Select PROJECT2.P_Name from Project2"; //I cannot get this sting to do anything, no matter waht I change it to, it always displays all projects?  
+			cmd.CommandText = selectQueryString; //I cannot get this sting to do anything, no matter waht I change it to, it always displays all projects?  
             cmd.ExecuteNonQuery();
             DataTable dt = new DataTable();
             SqlDataAdapter da = new SqlDataAdapter(cmd);
