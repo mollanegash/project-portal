@@ -34,6 +34,17 @@
     <script src="JS/FacultyLogged.js"></script>
     <script src="JS/CSPPJQuery.js"></script>
 
+    <style type="text/css">
+        .auto-style11 {
+            width: 100%;
+            margin-top: 10px;
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: auto;
+        }
+    </style>
+
 </head>
 <body>
     <header class="header-banner">
@@ -43,14 +54,14 @@
         <form id="form1" runat="server">
             <div>
                 <p>Hello Faculty</p>
-                <asp:Button ID="UserLabel1" runat="server" Text="No user" OnClick="FacProfile_click" style="height: 35px" />
+                <asp:Button ID="UserLabel1" runat="server" Text="No user" OnClick="FacProfile_click" Style="height: 35px" />
                 <asp:Button ID="loggoutButton" runat="server" Text="Logout" OnClick="logoutEventMethod" />
-                <div class="table-container">
-                    <h4 class="text-center sub-logo-header">Student Projects</h4>
-                    <br />
+                <div class="auto-style11">
+                    <h4 style="font-weight: bold; color: darkblue; margin-top: 30px;">ALL Student Projects</h4>
                     <br />
                     <asp:ScriptManager ID="ScriptManager1" runat="server" EnableScriptGlobalization="true"></asp:ScriptManager>
-                    <asp:GridView ID="EmpGridView" ShowHeaderWhenEmpty="True" AutoGenerateColumns="false" runat="server" CellPadding="4" BackColor="White" BorderColor="#3366CC" BorderStyle="None" BorderWidth="1px" CssClass="auto-style8" OnSelectedIndexChanged="EmpGridView_SelectedIndexChanged">
+                    <div class="text-left">
+                    <asp:GridView ID="EmpGridView" ShowHeaderWhenEmpty="True" AutoGenerateColumns="false" runat="server" CellPadding="4" BackColor="White" BorderColor="#3366CC" BorderStyle="None" BorderWidth="1px" CssClass="auto-style8" OnSelectedIndexChanged="EmpGridView_SelectedIndexChanged" HorizontalAlign="Center" Width="1103px">
                         <Columns>
                             <asp:BoundField HeaderText="Name" DataField="Fname" ItemStyle-Width="200">
                                 <ItemStyle Width="200px"></ItemStyle>
@@ -89,6 +100,8 @@
                         <SortedDescendingCellStyle BackColor="#D6DFDF" />
                         <SortedDescendingHeaderStyle BackColor="#002876" />
                     </asp:GridView>
+
+                    </div>
 
                     <asp:LinkButton ID="LinkButton1" runat="server" Style="display: none"></asp:LinkButton>
                     <asp:Panel ID="Panel1" runat="server" Height="319px" Width="600px" BackColor="White" BorderColor="Black" BorderStyle="Ridge" ForeColor="#003399">
@@ -132,7 +145,7 @@
                                 </td>
                             </tr>
                         </table>
-                         <table class="w-100">
+                        <table class="w-100">
                             <tr>
                                 <td class="auto-style lblStyle">Student ID</td>
                                 <td>
@@ -144,7 +157,7 @@
                         <table class="w-100">
                             <tr>
                                 <td class="auto-style10">
-                                    <asp:Button ID="Button1" runat="server" Text="ADD" onclick="AddClick" Width="140px" />
+                                    <asp:Button ID="Button1" runat="server" Text="ADD" OnClick="AddClick" Width="140px" />
                                 </td>
                                 <td class="auto-style10">
                                     <asp:Button ID="Button3" runat="server" Text="CANCLE" Width="140px" />
@@ -160,7 +173,17 @@
                 </div>
             </div>
         </form>
-    </header>
+         <br />
+    <br />
+    <br />
+    </header >
+   
+                       
+    <footer class="footer-bg">
+        <!-- DOM innerHTML footer -->
+        <div id="universal-footer"></div>
+    </footer>
 </body>
+
 </html>
 

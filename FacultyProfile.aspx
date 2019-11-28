@@ -34,6 +34,17 @@
     <script src="JS/FacultyLogged.js"></script>
     <script src="JS/CSPPJQuery.js"></script>
 
+    <style type="text/css">
+        .auto-style11 {
+            width: 100%;
+            margin-top: 10px;
+            text-align: left;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: auto;
+        }
+    </style>
+
 </head>
 <body>
     <header class="header-banner">
@@ -45,9 +56,10 @@
                 <p>Hello Faculty</p>
                 <asp:Label ID="labelText" runat="server" Text="No user"/>
                 <asp:Button ID="loggoutButton" runat="server" Text="Logout" OnClick="logoutEventMethod" />
-                <div class="table-container">
+                <div class="auto-style11">
                     <asp:ScriptManager ID="ScriptManager1" EnableScriptGlobalization="true" runat="server"></asp:ScriptManager>
-                    <h6 class="sub-logo-header" style="color: blue; ">Faculty Profile</h6>
+                    <h4 style="font-weight: bold; color: darkblue; margin-bottom: 30px; " class="text-center"> Faculty Profile</h4>
+                    <div class="text-center">
                     <asp:GridView ID="EmpGridView" ShowHeaderWhenEmpty="True" AutoGenerateColumns="False" runat="server" CellPadding="4" BackColor="White" BorderColor="#3366CC" BorderStyle="None" BorderWidth="1px" CssClass="auto-style8" OnSelectedIndexChanged="EmpGridView_SelectedIndexChanged" HorizontalAlign="Center">
                         <Columns>
                             <asp:BoundField HeaderText="First Name" DataField="Fname" ItemStyle-Width="200">
@@ -81,6 +93,8 @@
                         <SortedDescendingCellStyle BackColor="#D6DFDF" />
                         <SortedDescendingHeaderStyle BackColor="#002876" />
                     </asp:GridView>
+
+                    </div>
 
                     <asp:LinkButton ID="LinkButton1" runat="server" Style="display: none"></asp:LinkButton>
                     <asp:Panel ID="Panel1" runat="server" Height="319px" Width="600px" BackColor="White" BorderColor="Black" BorderStyle="Ridge" ForeColor="#003399">
@@ -138,5 +152,9 @@
              </div>
         </form>
     </header>
+    <footer class="footer-bg">
+		<!-- DOM innerHTML footer -->
+		<div id="universal-footer"></div>
+	</footer>
 </body>
 </html>

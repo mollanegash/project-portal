@@ -69,6 +69,7 @@
 								Google
 							</button>
 					</div>
+
 				</form>
 			</div>
 		</main>

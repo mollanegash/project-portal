@@ -19,9 +19,6 @@ window.onload = function () {
         '<li class="nav-item">' +
         '<a class="nav-link nav-projectlist" href="ProjectList.aspx">Project List</a>' +
         '</li>' +
-        '<li class="nav-item">' +
-        '<a class="nav-link nav-submit" href="submitsearch.cshtml">Search Project</a>' +
-        '</li>' + 
         '</ul>' +
         '</div>'
     '</nav>' +

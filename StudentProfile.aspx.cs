@@ -54,6 +54,7 @@ namespace TestForm.ProjectsCS
             da.Fill(dt);
             EmpGridView.DataSource = dt;
             EmpGridView.DataBind();
+            EmpGridView.RowStyle.VerticalAlign = VerticalAlign.Middle;
             con.Close();
         }
 

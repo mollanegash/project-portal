@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Soy\\source\\repos\\CSPortalTest\\CSPortalTest\\automateTest.csproj": {}
+    "C:\\Users\\Soy\\Desktop\\SE2019Fall\\cs673-project-team-4\\AutomateTestSolution\\CSPortalTest\\automateTest.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Soy\\source\\repos\\CSPortalTest\\CSPortalTest\\automateTest.csproj": {
+    "C:\\Users\\Soy\\Desktop\\SE2019Fall\\cs673-project-team-4\\AutomateTestSolution\\CSPortalTest\\automateTest.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Soy\\source\\repos\\CSPortalTest\\CSPortalTest\\automateTest.csproj",
+        "projectUniqueName": "C:\\Users\\Soy\\Desktop\\SE2019Fall\\cs673-project-team-4\\AutomateTestSolution\\CSPortalTest\\automateTest.csproj",
         "projectName": "automateTest",
-        "projectPath": "C:\\Users\\Soy\\source\\repos\\CSPortalTest\\CSPortalTest\\automateTest.csproj",
+        "projectPath": "C:\\Users\\Soy\\Desktop\\SE2019Fall\\cs673-project-team-4\\AutomateTestSolution\\CSPortalTest\\automateTest.csproj",
         "packagesPath": "C:\\Users\\Soy\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Soy\\source\\repos\\CSPortalTest\\CSPortalTest\\obj\\",
+        "outputPath": "C:\\Users\\Soy\\Desktop\\SE2019Fall\\cs673-project-team-4\\AutomateTestSolution\\CSPortalTest\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
@@ -42,9 +42,21 @@
       "frameworks": {
         "netcoreapp3.0": {
           "dependencies": {
+            "Microsoft.NET.Test.Sdk": {
+              "target": "Package",
+              "version": "[16.4.0, )"
+            },
             "NUnit": {
               "target": "Package",
               "version": "[3.12.0, )"
+            },
+            "NUnit.ConsoleRunner": {
+              "target": "Package",
+              "version": "[3.10.0, )"
+            },
+            "NUnit3TestAdapter": {
+              "target": "Package",
+              "version": "[3.15.1, )"
             },
             "Selenium.WebDriver": {
               "target": "Package",

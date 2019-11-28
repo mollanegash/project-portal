@@ -93,6 +93,10 @@
         </form>
               
     </header>
+    <footer class="footer-bg">
+		<!-- DOM innerHTML footer -->
+		<div id="universal-footer"></div>
+	</footer>
 </body>
 </html>
 
