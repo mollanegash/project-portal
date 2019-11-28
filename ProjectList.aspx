@@ -30,6 +30,12 @@
     <script src="JS/jquery-3.3.1.js"></script>
     <script src="JS/CSPPJQuery.js"></script>
 
+    <style type="text/css">
+        .auto-style11 {
+            margin-left: 138;
+        }
+    </style>
+
 </head>
 <body>
 <form class="form2" runat="server">
@@ -52,9 +58,6 @@
                                 <a class="nav-link nav-projectlist" href="ProjectList.aspx">Project List</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link nav-submit" href="submitsearch.cshtml">Search Project</a>
-                            </li>
-                            <li class="nav-item">
                                 <a class="nav-link" href="registeration.aspx">Signup</a>
                             </li>
                         </ul>
@@ -62,12 +65,24 @@
                 </nav>
             </div>
         </div>
-            <div style="margin-top: 5%; ">
+            <div style="margin-top: 5%; " class="text-center">
+                
+                    <asp:DropDownList ID="DropDownList1" runat="server" Height="30px" Width="222px" style="margin-right: 50px">
+                    <asp:ListItem>Select Search</asp:ListItem>
+                    <asp:ListItem>Author Name</asp:ListItem>
+                    <asp:ListItem>Project Name</asp:ListItem>
+                    <asp:ListItem>Project ID</asp:ListItem>
+                    <asp:ListItem>Project Tag</asp:ListItem>
+                </asp:DropDownList>
+                <asp:TextBox ID="TextBox1" runat="server" placeholder="Type Search" CssClass="auto-style11" Height="30px" Width="295px" AutoPostBack="True" OnTextChanged="TextBox1_TextChanged"></asp:TextBox>
+                <br/>
+                <br />
+                
                 <asp:ScriptManager ID="ScriptManager1" EnableScriptGlobalization="true" runat="server"></asp:ScriptManager>
-
-                    <asp:GridView ID="EmpGridView" ShowHeaderWhenEmpty="True" AutoGenerateColumns="False" runat="server" CellPadding="4" BackColor="White" BorderColor="#3366CC" BorderStyle="None" BorderWidth="1px" CssClass="auto-style8" OnSelectedIndexChanged="EmpGridView_SelectedIndexChanged">
+                <h4 style="font-weight: bold; color: darkblue; margin-bottom: 30px; " class="text-center"> Projects list</h4>
+                    <asp:GridView ID="EmpGridView" ShowHeaderWhenEmpty="True" AutoGenerateColumns="False" runat="server" CellPadding="4" BackColor="White" BorderColor="#3366CC" BorderStyle="None" BorderWidth="1px" CssClass="auto-style8" OnSelectedIndexChanged="EmpGridView_SelectedIndexChanged" Height="255px" HorizontalAlign="Center" Width="1285px" AllowPaging="True" OnSelectedIndexChanging="EmpGridView_SelectedIndexChanging" PageIndex="3" PageSize="5" style="margin-top: 0px" OnPageIndexChanging="EmpGridView_PageIndexChanging">
                         <Columns>
-                            <asp:BoundField HeaderText="Project ID" DataField="P_ID" ItemStyle-Width="200">
+                            <asp:BoundField  DataField="P_ID" HeaderText="Project ID" ItemStyle-Width="200">
                                 <ItemStyle Width="200px"></ItemStyle>
                             </asp:BoundField>
                             <asp:BoundField DataField="P_Name" HeaderText="Project Name" ItemStyle-Width="200">
@@ -85,7 +100,7 @@
                             <asp:BoundField DataField="Descrip" HeaderText="Description" ItemStyle-Width="100">
                                 <ItemStyle Width="200px"></ItemStyle>
                             </asp:BoundField>
-                            <asp:BoundField DataField="UserID" HeaderText="Student ID" ItemStyle-Width="100">
+                            <asp:BoundField DataField="FName" HeaderText="Student Name" ItemStyle-Width="100">
                                 <ItemStyle Width="200px"></ItemStyle>
                             </asp:BoundField>
 
@@ -101,11 +116,7 @@
                         <HeaderStyle BackColor="#003399" Font-Bold="True" ForeColor="#CCCCFF" />
                         <PagerStyle BackColor="#99CCCC" ForeColor="#003399" HorizontalAlign="Left" />
                         <RowStyle BackColor="White" ForeColor="#003399" />
-                        <SelectedRowStyle BackColor="#009999" Font-Bold="True" ForeColor="#CCFF99" />
-                        <SortedAscendingCellStyle BackColor="#EDF6F6" />
-                        <SortedAscendingHeaderStyle BackColor="#0D4AC4" />
-                        <SortedDescendingCellStyle BackColor="#D6DFDF" />
-                        <SortedDescendingHeaderStyle BackColor="#002876" />
+                        <SelectedRowStyle BackColor="#009999" Font-Bold="True" ForeColor="#CCFF99" />       
                     </asp:GridView>
 
                     <asp:LinkButton ID="LinkButton1" runat="server" Style="display: none"></asp:LinkButton>
@@ -154,7 +165,7 @@
                         <table class="w-100">
                             <tr>
                                 <td class="auto-style10">
-                                    <asp:Button ID="Button3" runat="server" Text="Close" Width="140px" OnClick="Button3_Click" />
+                                    <asp:Button ID="Button3" runat="server" Text="CANCLE" Width="140px" OnClick="Button3_Click" />
                                 </td>
                             </tr>
                         </table>
@@ -165,9 +176,11 @@
                     </asp:Panel>
                     <ajax:ModalPopupExtender ID="ModalPopupExtender1" TargetControlID="LinkButton1" PopupControlID="Panel1" CancelControlID="Button3" BackgroundCssClass="modalBackground" runat="server"></ajax:ModalPopupExtender>
                 </div>
-      
+       <br/>
+    <br/>
     </header>
  </form>
+   
 
     <footer class="footer-bg">
         <!-- DOM innerHTML footer -->

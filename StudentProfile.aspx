@@ -33,6 +33,17 @@
     <script src="JS/LoggedInJS.js"></script>
     <script src="JS/CSPPJQuery.js"></script>
 
+<style>
+
+.verticaltext {
+ 
+writing-mode: tb-rl;
+filter: flipv fliph;
+}
+ 
+ 
+</style>
+
 </head>
 <body>
     <header class="header-banner">
@@ -47,22 +58,22 @@
                 <div class="table-container">
                     <asp:ScriptManager ID="ScriptManager1" EnableScriptGlobalization="true" runat="server"></asp:ScriptManager>
                     <h6 class="sub-logo-header" style="color: blue; ">Student Profile</h6>
-                    <asp:GridView ID="EmpGridView" ShowHeaderWhenEmpty="True" AutoGenerateColumns="False" runat="server" CellPadding="4" BackColor="White" BorderColor="#3366CC" BorderStyle="None" BorderWidth="1px" CssClass="auto-style8" OnSelectedIndexChanged="EmpGridView_SelectedIndexChanged" HorizontalAlign="Center">
+                    <asp:GridView ID="EmpGridView" ShowHeaderWhenEmpty="True" AutoGenerateColumns="False" runat="server" CellPadding="4" BackColor="White" BorderColor="#3366CC" BorderStyle="None" BorderWidth="1px" CssClass="auto-style8" OnSelectedIndexChanged="EmpGridView_SelectedIndexChanged" >
                         <Columns>
-                            <asp:BoundField HeaderText="First Name" DataField="Fname" ItemStyle-Width="200">
-                                <ItemStyle Width="200px"></ItemStyle>
+                            <asp:BoundField  HeaderText="First Name" DataField="Fname" ItemStyle-Width="200" >
+                                <HeaderStyle CssClass="verticaltext" />
                             </asp:BoundField>
                             <asp:BoundField DataField="Lname" HeaderText="Last Name" ItemStyle-Width="200">
-                                <ItemStyle Width="200px"></ItemStyle>
+                                <HeaderStyle CssClass="verticaltext" />
                             </asp:BoundField>
                              <asp:BoundField DataField="School" HeaderText="School" ItemStyle-Width="100">
-                                <ItemStyle Width="200px"></ItemStyle>
+                                <HeaderStyle CssClass="verticaltext" />
                             </asp:BoundField>
                             <asp:BoundField DataField="Major" HeaderText="Major" ItemStyle-Width="200">
-                                <ItemStyle Width="200px"></ItemStyle>
+                                <HeaderStyle CssClass="verticaltext" />
                             </asp:BoundField>                          
                             <asp:BoundField DataField="Grad_Date" DataFormatString="{0:MM/dd/yy}" HeaderText=" Graduate Date" ItemStyle-Width="200">
-                                <ItemStyle Width="200px"></ItemStyle>
+                                <HeaderStyle CssClass="verticaltext" />
                             </asp:BoundField>
                             <asp:TemplateField>
                                 <ItemTemplate>
@@ -147,5 +158,9 @@
              </div>
         </form>
     </header>
+    <footer class="footer-bg">
+		<!-- DOM innerHTML footer -->
+		<div id="universal-footer"></div>
+	</footer>
 </body>
 </html>
