@@ -77,25 +77,40 @@ namespace CSPortalTest
         }
 
 
-        // Project List find a Project
+        // Project List find a Project Name
         [Test]
-        static void findProjectTest(IWebDriver driver)
+        static void findProjectTestName(IWebDriver driver)
         {
             //Enter project details
-            drive.FindElement(By.Id("ProjectNameBox")).SendKeys("AutoTest Pname");
-            drive.FindElement(By.Id("projectDesBox")).SendKeys("AutoTest P Desc.");
-            drive.FindElement(By.Id("LinkBox")).SendKeys("AutoTest www.testProject.com");
-            drive.FindElement(By.Id("uploadBox")).SendKeys("12/02/2019");
-            drive.FindElement(By.Id("projectTagBox")).SendKeys("#AutoTest");
+            drive.FindElement(By.Id("DropDownList1")).SendKeys("Project Name");
+            drive.FindElement(By.Id("TextBox1")).SendKeys("AutoTest Pname");
+
 
             //click to enter into the system
-            driver.FindElement(By.Id("submit")).Click();
 
             driver.Manage().Window.Maximize();
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(20); // set locatorTimeout to be 20 secound at max
 
         }
 
+
+        // Project List find a Project Author
+        [Test]
+        static void findProjectTestAuthor(IWebDriver driver)
+        {
+            //Enter project details
+            drive.FindElement(By.Id("DropDownList1")).SendKeys("Author Name");
+            drive.FindElement(By.Id("TextBox1")).SendKeys("AutoTest Fname");
+
+
+            //click to enter into the system
+
+            driver.Manage().Window.Maximize();
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(20); // set locatorTimeout to be 20 secound at max
+
+        }
+
+    
         // Add Comment
         [Test]
         static void addCommentTest(IWebDriver driver)
