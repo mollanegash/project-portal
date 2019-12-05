@@ -110,7 +110,41 @@ namespace CSPortalTest
 
         }
 
-    
+
+        // Project List find a Project tag
+        [Test]
+        static void findProjectTestTag(IWebDriver driver)
+        {
+            //Enter project details
+            drive.FindElement(By.Id("DropDownList1")).SendKeys("Project Tag");
+            drive.FindElement(By.Id("TextBox1")).SendKeys("#AutoTest");
+
+
+            //click to enter into the system
+
+            driver.Manage().Window.Maximize();
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(20); // set locatorTimeout to be 20 secound at max
+
+        }
+
+
+        // Project List find a Project tag
+        [Test]
+        static void findProjectTestTag(IWebDriver driver)
+        {
+            //Enter project details
+            drive.FindElement(By.Id("DropDownList1")).SendKeys("Project ID");
+            drive.FindElement(By.Id("TextBox1")).SendKeys("#8");
+
+
+            //click to enter into the system
+
+            driver.Manage().Window.Maximize();
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(20); // set locatorTimeout to be 20 secound at max
+
+        }
+
+
         // Add Comment
         [Test]
         static void addCommentTest(IWebDriver driver)
