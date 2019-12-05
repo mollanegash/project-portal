@@ -20,9 +20,9 @@ namespace CSPortalTest
           drive.FindElement(By.Id("lastNameTextBox")).SendKeys("AutoTest Lname");
           drive.FindElement(By.Id("schoolTextBox")).SendKeys("AutoTest SchoolName");
           drive.FindElement(By.Id("DropDownList1")).SendKeys("Student");
-          drive.FindElement(By.Id("usernameTextBox")).SendKeys("#AutoTestStudent@bu.edu");
-          drive.FindElement(By.Id("passwordTextBox")).SendKeys("#AutoTestPassword");
-          drive.FindElement(By.Id("confirmPasswordTextBox")).SendKeys("#AutoTestPassword");
+          drive.FindElement(By.Id("usernameTextBox")).SendKeys("AutoTestStudent@bu.edu");
+          drive.FindElement(By.Id("passwordTextBox")).SendKeys("AutoTestPassword");
+          drive.FindElement(By.Id("confirmPasswordTextBox")).SendKeys("AutoTestPassword");
 
 
           //click to enter into the system
@@ -34,6 +34,32 @@ namespace CSPortalTest
         }
 
 
+        // Fail to Create new student account
+        [Test]
+        static void createStudentTestFail(IWebDriver driver)
+        {
+          //Enter student details
+          drive.FindElement(By.Id("firstnameTextBox")).SendKeys("FailAutoTestFname");
+          drive.FindElement(By.Id("lastNameTextBox")).SendKeys("FailAutoTestLname");
+          drive.FindElement(By.Id("schoolTextBox")).SendKeys("FailAutoTestSchoolName");
+          drive.FindElement(By.Id("DropDownList1")).SendKeys("Student");
+          drive.FindElement(By.Id("usernameTextBox")).SendKeys("FailAutoTestStudent@bu.edu");
+          drive.FindElement(By.Id("passwordTextBox")).SendKeys("AutoTestPassword");
+          drive.FindElement(By.Id("confirmPasswordTextBox")).SendKeys("AutoTestPassword2");
+
+
+          //click to enter into the system
+          driver.FindElement(By.Id("registerButton")).Click();
+
+          driver.Manage().Window.Maximize();
+          driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(20); // set locatorTimeout to be 20 secound at max
+
+        }
+
+
+        // 
+
+
         // Create new faculty account
         [Test]
         static void createFacultyTest(IWebDriver driver)
@@ -43,9 +69,9 @@ namespace CSPortalTest
           drive.FindElement(By.Id("lastNameTextBox")).SendKeys("AutoTest Lname");
           drive.FindElement(By.Id("schoolTextBox")).SendKeys("AutoTest SchoolName");
           drive.FindElement(By.Id("DropDownList1")).SendKeys("Faculty");
-          drive.FindElement(By.Id("usernameTextBox")).SendKeys("#AutoTestFaculty@bu.edu");
-          drive.FindElement(By.Id("passwordTextBox")).SendKeys("#AutoTestPassword");
-          drive.FindElement(By.Id("confirmPasswordTextBox")).SendKeys("#AutoTestPassword");
+          drive.FindElement(By.Id("usernameTextBox")).SendKeys("AutoTestFaculty@bu.edu");
+          drive.FindElement(By.Id("passwordTextBox")).SendKeys("AutoTestPassword");
+          drive.FindElement(By.Id("confirmPasswordTextBox")).SendKeys("AutoTestPassword");
 
 
           //click to enter into the system
@@ -110,7 +136,41 @@ namespace CSPortalTest
 
         }
 
-    
+
+        // Project List find a Project tag
+        [Test]
+        static void findProjectTestTag(IWebDriver driver)
+        {
+            //Enter project details
+            drive.FindElement(By.Id("DropDownList1")).SendKeys("Project Tag");
+            drive.FindElement(By.Id("TextBox1")).SendKeys("#AutoTest");
+
+
+            //click to enter into the system
+
+            driver.Manage().Window.Maximize();
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(20); // set locatorTimeout to be 20 secound at max
+
+        }
+
+
+        // Project List find a Project tag
+        [Test]
+        static void findProjectTestTag(IWebDriver driver)
+        {
+            //Enter project details
+            drive.FindElement(By.Id("DropDownList1")).SendKeys("Project ID");
+            drive.FindElement(By.Id("TextBox1")).SendKeys("#8");
+
+
+            //click to enter into the system
+
+            driver.Manage().Window.Maximize();
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(20); // set locatorTimeout to be 20 secound at max
+
+        }
+
+
         // Add Comment
         [Test]
         static void addCommentTest(IWebDriver driver)
@@ -125,6 +185,8 @@ namespace CSPortalTest
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(20); // set locatorTimeout to be 20 secound at max
 
         }
+
+
 
 
 
