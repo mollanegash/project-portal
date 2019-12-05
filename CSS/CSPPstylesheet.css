@@ -11,6 +11,28 @@ body {
     margin-top: 100px;
 }
 
+.auto-style11 {
+    margin-left: 138;
+}
+
+.auto-style16 {
+    width: 99%;
+    height: 107px;
+}
+
+.auto-style17 {
+    width: 192px;
+}
+
+.auto-style21 {
+    margin-left: 0;
+    margin-top: 0;
+}
+
+.auto-style22 {
+    margin-left: 61px;
+}
+
 .lblStyle {
     padding-left: 40px;
 }
@@ -26,7 +48,6 @@ body {
 .modalBackground {
     color: white;
     position: absolute;
-    z-index: -1;
 }   
 
 .auto-style10 {

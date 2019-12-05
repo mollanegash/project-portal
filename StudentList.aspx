@@ -33,6 +33,13 @@
     <script src="JS/FacultyLogged.js"></script>
     <script src="JS/CSPPJQuery.js"></script>
 
+    <style type="text/css">
+        .auto-style23 {
+            text-align: center;
+            color: #000099;
+        }
+    </style>
+
 </head>
 <body>
     <header class="header-banner">
@@ -42,10 +49,10 @@
         <form id="form1" runat="server">
             <div>
                 <p>Hello Faculty</p>
-                <asp:Button ID="UserLabel1" runat="server" Text="No user" />
+                <asp:Button ID="UserLabel1" runat="server" Text="No user" OnClick="UserLabel1_Click" />
                 <asp:Button ID="loggoutButton" runat="server" Text="Logout" OnClick="logoutEventMethod" />
                 <div class="table-container">
-                    <h6 class="sub-logo-header text-center">Student's List</h6>
+                    <h4 class="auto-style23"><strong>Student's List</strong></h4>
                     <asp:ScriptManager ID="ScriptManager1" runat="server" EnableScriptGlobalization="true"></asp:ScriptManager>
 
                     <asp:GridView ID="EmpGridView" ShowHeaderWhenEmpty="True" AutoGenerateColumns="false" runat="server" CellPadding="4" BackColor="White" BorderColor="#3366CC" BorderStyle="None" BorderWidth="1px" CssClass="auto-style8" OnSelectedIndexChanged="EmpGridView_SelectedIndexChanged">

@@ -18,8 +18,6 @@ namespace TestForm
             }
             con.Open();
 
-            dis_data();
-
         }
         //Function onclick on enter on register form
         protected void RegisterEventMethod(object sender, EventArgs e)
@@ -142,7 +140,7 @@ namespace TestForm
                 schoolTextBox.Text = "";
                 usernameTextBox.Text = "";
 
-                dis_data();
+               
             }
 
             else
@@ -188,19 +186,8 @@ namespace TestForm
 
         }
 
-        //Function to display user table will be delete after all testing is completed 
-        public void dis_data()
-        {
-            SqlCommand cmd = con.CreateCommand();
-            cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "select * from USERTABLE";
-            cmd.ExecuteNonQuery();
-            DataTable dt = new DataTable();
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            da.Fill(dt);
-            GridView1.DataSource = dt;
-            GridView1.DataBind();
-        }
+        
+        
     }
 }
 
