@@ -61,7 +61,8 @@
                     <br />
                     <asp:ScriptManager ID="ScriptManager1" runat="server" EnableScriptGlobalization="true"></asp:ScriptManager>
                     <div class="text-left">
-                    <asp:GridView ID="EmpGridView" ShowHeaderWhenEmpty="True" AutoGenerateColumns="false" runat="server" CellPadding="4" BackColor="White" BorderColor="#3366CC" BorderStyle="None" BorderWidth="1px" CssClass="auto-style8" OnSelectedIndexChanged="EmpGridView_SelectedIndexChanged" HorizontalAlign="Center" Width="1103px">
+                        
+                             <asp:GridView ID="EmpGridView" ShowHeaderWhenEmpty="True" AutoGenerateColumns="false" runat="server" CellPadding="4" BackColor="White" BorderColor="#3366CC" BorderStyle="None" BorderWidth="1px" CssClass="auto-style8" OnSelectedIndexChanged="EmpGridView_SelectedIndexChanged" HorizontalAlign="Center" Width="1103px">
                         <Columns>
                             <asp:BoundField HeaderText="Name" DataField="Fname" ItemStyle-Width="200">
                                 <ItemStyle Width="200px"></ItemStyle>
@@ -100,7 +101,7 @@
                         <SortedDescendingCellStyle BackColor="#D6DFDF" />
                         <SortedDescendingHeaderStyle BackColor="#002876" />
                     </asp:GridView>
-
+                        
                     </div>
 
                     <asp:LinkButton ID="LinkButton1" runat="server" Style="display: none"></asp:LinkButton>
@@ -124,7 +125,7 @@
                         <table class="w-100">
                             <tr>
                                 <td class="auto-style lblStyle">Project Name </td>
-                                <td>
+                                <td class="text-left">
                                     <asp:Label class="auto-style7" ID="Label3" runat="server" Text=""></asp:Label>
                                 </td>
                             </tr>
@@ -132,7 +133,7 @@
                         <table class="w-100">
                             <tr>
                                 <td class="auto-style lblStyle">Description</td>
-                                <td>
+                                <td class="text-left">
                                     <asp:Label class="auto-style7" ID="Label4" runat="server" Text=""></asp:Label>
                                 </td>
                             </tr>
@@ -140,7 +141,7 @@
                         <table class="w-100">
                             <tr>
                                 <td class="auto-style lblStyle">Link Project</td>
-                                <td>
+                                <td class="text-left">
                                     <asp:Label class="auto-style7" ID="Label5" runat="server" Text=""></asp:Label>
                                 </td>
                             </tr>
@@ -148,7 +149,7 @@
                         <table class="w-100">
                             <tr>
                                 <td class="auto-style lblStyle">Student ID</td>
-                                <td>
+                                <td class="text-left">
                                     <asp:Label class="auto-style7" ID="Label6" runat="server" Text=""></asp:Label>
                                 </td>
                             </tr>

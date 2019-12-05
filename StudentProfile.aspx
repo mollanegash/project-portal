@@ -42,6 +42,22 @@ filter: flipv fliph;
 }
  
  
+    .auto-style25 {
+        width: 100%;
+        margin-top: 10px;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: auto;
+    }
+    .auto-style26 {
+        color: #000099;
+    }
+    .auto-style27 {
+        color: #003399;
+    }
+ 
+ 
 </style>
 
 </head>
@@ -55,10 +71,12 @@ filter: flipv fliph;
                 <p>Hello Student</p>
                 <asp:Label ID="UserLabel1" runat="server" Text="No user" />
                 <asp:Button ID="loggoutButton" runat="server" Text="Logout" OnClick="logoutEventMethod" />
-                <div class="table-container">
+                <div class="auto-style25">
                     <asp:ScriptManager ID="ScriptManager1" EnableScriptGlobalization="true" runat="server"></asp:ScriptManager>
-                    <h6 class="sub-logo-header" style="color: blue; ">Student Profile</h6>
-                    <asp:GridView ID="EmpGridView" ShowHeaderWhenEmpty="True" AutoGenerateColumns="False" runat="server" CellPadding="4" BackColor="White" BorderColor="#3366CC" BorderStyle="None" BorderWidth="1px" CssClass="auto-style8" OnSelectedIndexChanged="EmpGridView_SelectedIndexChanged" >
+                    <br />
+                    <h4 class="text-left" ><strong><span class="auto-style26">Student</span> <span class="auto-style27">Profile</span></strong></h4>     
+                    <br />
+                    <asp:GridView ID="EmpGridView" ShowHeaderWhenEmpty="True" AutoGenerateColumns="False" runat="server" CellPadding="4" BackColor="White" BorderColor="#3366CC" BorderStyle="None" BorderWidth="1px" CssClass="auto-style8" OnSelectedIndexChanged="EmpGridView_SelectedIndexChanged" Width="1078px" >
                         <Columns>
                             <asp:BoundField  HeaderText="First Name" DataField="Fname" ItemStyle-Width="200" >
                                 <HeaderStyle CssClass="verticaltext" />
@@ -94,6 +112,8 @@ filter: flipv fliph;
                         <SortedDescendingCellStyle BackColor="#D6DFDF" />
                         <SortedDescendingHeaderStyle BackColor="#002876" />
                     </asp:GridView>
+          
+                    </div>
 
                     <asp:LinkButton ID="LinkButton1" runat="server" Style="display: none"></asp:LinkButton>
                     <asp:Panel ID="Panel1" runat="server" Height="319px" Width="600px" BackColor="White" BorderColor="Black" BorderStyle="Ridge" ForeColor="#003399">

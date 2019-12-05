@@ -88,7 +88,12 @@ namespace TestForm
             Response.Redirect("StudentList.aspx");
 
             con.Close();
-        }     
+        }
+
+        protected void UserLabel1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 
 }

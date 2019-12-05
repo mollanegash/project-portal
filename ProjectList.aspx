@@ -34,6 +34,20 @@
         .auto-style11 {
             margin-left: 138;
         }
+        .auto-style16 {
+            width: 99%;
+            height: 107px;
+        }
+        .auto-style17 {
+            width: 192px;
+        }
+        .auto-style21 {
+            margin-left: 0;
+            margin-top: 0;
+        }
+        .auto-style22 {
+            margin-left: 61;
+        }
     </style>
 
 </head>
@@ -80,7 +94,7 @@
                 
                 <asp:ScriptManager ID="ScriptManager1" EnableScriptGlobalization="true" runat="server"></asp:ScriptManager>
                 <h4 style="font-weight: bold; color: darkblue; margin-bottom: 30px; " class="text-center"> Projects list</h4>
-                    <asp:GridView ID="EmpGridView" ShowHeaderWhenEmpty="True" AutoGenerateColumns="False" runat="server" CellPadding="4" BackColor="White" BorderColor="#3366CC" BorderStyle="None" BorderWidth="1px" CssClass="auto-style8" OnSelectedIndexChanged="EmpGridView_SelectedIndexChanged" Height="255px" HorizontalAlign="Center" Width="1285px" AllowPaging="True" OnSelectedIndexChanging="EmpGridView_SelectedIndexChanging" PageIndex="3" PageSize="5" style="margin-top: 0px" OnPageIndexChanging="EmpGridView_PageIndexChanging">
+                    <asp:GridView ID="EmpGridView" ShowHeaderWhenEmpty="True" AutoGenerateColumns="False" runat="server" CellPadding="4" BackColor="White" BorderColor="#3366CC" BorderStyle="None" BorderWidth="1px" CssClass="auto-style8" OnSelectedIndexChanged="EmpGridView_SelectedIndexChanged" Height="255px" HorizontalAlign="Center" Width="1285px" AllowPaging="True" OnSelectedIndexChanging="EmpGridView_SelectedIndexChanging" PageSize="6" style="margin-top: 0px" OnPageIndexChanging="EmpGridView_PageIndexChanging">
                         <Columns>
                             <asp:BoundField  DataField="P_ID" HeaderText="Project ID" ItemStyle-Width="200">
                                 <ItemStyle Width="200px"></ItemStyle>
@@ -117,13 +131,21 @@
                         <PagerStyle BackColor="#99CCCC" ForeColor="#003399" HorizontalAlign="Left" />
                         <RowStyle BackColor="White" ForeColor="#003399" />
                         <SelectedRowStyle BackColor="#009999" Font-Bold="True" ForeColor="#CCFF99" />       
+                    
                     </asp:GridView>
 
                     <asp:LinkButton ID="LinkButton1" runat="server" Style="display: none"></asp:LinkButton>
-                    <asp:Panel ID="Panel1" runat="server" Height="319px" Width="600px" BackColor="White" BorderColor="Black" BorderStyle="Ridge" ForeColor="#003399">
+                    <div class="text-left">
+                    <asp:Panel ID="Panel1" runat="server" Height="345px" Width="678px" BackColor="White" BorderColor="White" BorderStyle="Ridge" ForeColor="#003399" ScrollBars="Vertical">
                         <br />
                         <br />
                         <table>
+                            <tr>
+                                <td class="auto-style lblStyle">Project ID</td>
+                                <td>
+                                    <asp:Label ID="lbl0" runat="server" CssClass="offset-sm-0" Width="400px"></asp:Label>
+                                </td>
+                            </tr>
                             <tr>
                                 <td class="auto-style lblStyle">Project Name</td>
                                 <td>
@@ -162,11 +184,63 @@
                             </tr>
                         </table>
                         <br />
+                        
+                        <div class="text-left lblStyle">
+                            <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                                <ContentTemplate>
+                                     <asp:Label ID="Label4" runat="server" Text="Comment" Font-Bold="True" ForeColor="Black" BackColor="#FFFF99"></asp:Label>
+                            <br />
+                            <asp:Repeater ID="Repeater1" runat="server" OnItemCommand="Repeater1_ItemCommand">
+                            <ItemTemplate>                        
+                                <br />
+                        <asp:Label ID="Label1" runat="server" Text='<%#Eval("ComName") %>'></asp:Label>
+                                <br />
+                        <asp:Label ID="Label2"  runat="server" Text='<%#Eval("DateComment", "{0:MM/dd/yy}") %>'></asp:Label>
+                                <br />
+                        <asp:Label ID="Label3" runat="server" Text='<%#Eval("CommentText") %>'></asp:Label>
+                                   <br />
+                            </ItemTemplate>
+                    
+                        </asp:Repeater>
+                                </ContentTemplate>
+                            </asp:UpdatePanel>
+                           
+                        </div>
+                       <br />
                         <table class="w-100">
                             <tr>
-                                <td class="auto-style10">
-                                    <asp:Button ID="Button3" runat="server" Text="CANCLE" Width="140px" OnClick="Button3_Click" />
+                                <td class="auto-style17 lblStyle"> Name</td>
+                                <td>
+                                    <asp:TextBox ID="TextName" runat="server" CssClass="offset-sm-0" Height="27px" Width="310px"></asp:TextBox>
                                 </td>
+                            </tr>
+                        </table>
+                        <table class="auto-style16">
+                            <tr>
+                                <td class="auto-style17 lblStyle"> Comment</td>
+                                <td>
+                                    <asp:TextBox ID="TextComment" runat="server" CssClass="auto-style21" Height="68px" Width="310px"></asp:TextBox>
+                                </td>
+                            </tr>
+                        </table>
+                        <br />
+                        <table class="w-100">
+                            <tr>
+                                <td class="text-center">
+                                   
+                                    <asp:Button class="auto-style17 lblStyle" ID="Comment" runat="server" Text="ADD COMMENT" Width="237px" OnClick="Comment_Click1" Height="40px" />
+                                                                    
+                                </td>
+                                <td>
+                                    <asp:Button class="auto-style17 lblStyle" ID="Button3" runat="server" Text="CLOSE" Width="210px"  OnClick="Button3_Click" CssClass="auto-style22" Height="41px" />   
+                                </td>
+                            </tr>
+                        </table>
+                         <table class="w-100">
+                            <tr>
+                                <td class="auto-style10">
+
+                                    &nbsp;</td>
                             </tr>
                         </table>
                         <br />
@@ -174,8 +248,10 @@
                         <br />
                         <br />
                     </asp:Panel>
+                    </div>
                     <ajax:ModalPopupExtender ID="ModalPopupExtender1" TargetControlID="LinkButton1" PopupControlID="Panel1" CancelControlID="Button3" BackgroundCssClass="modalBackground" runat="server"></ajax:ModalPopupExtender>
                 </div>
+        
        <br/>
     <br/>
     </header>
@@ -190,8 +266,7 @@
                 <nav class="navbar  nav-footer navbar-expand-sm">
                     <ul class="navbar-nav nav-footer">
                         <li class="nav-item ">
-                            <a class="nav-link nav-item-footer" href="#">About </a>
-                        </li>
+                            <a class="nav-link nav-item-footer" href="#">About                 </li>
                         <li class="nav-item">
                             <a class="nav-link nav-item-footer" href="#">Contact Us </a>
                         </li>

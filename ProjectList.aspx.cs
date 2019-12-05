@@ -2,17 +2,23 @@
 using System.Data;
 using System.Data.SqlClient;
 using System.Web.UI.WebControls;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
 
 namespace TestForm.ProjectsCS
 {
     public partial class ProjectList : System.Web.UI.Page
     {
         private SqlConnection con = new SqlConnection(@"Data Source=parsley.arvixe.com;Initial Catalog=computerscienceprojectportal;Persist Security Info=True;User ID=computerscienceprojectportal;Password=team4CS673");
+        
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
                 Dis_data();
+                    
             }
 
         }
@@ -60,12 +66,14 @@ namespace TestForm.ProjectsCS
         {
             Button imgbtn = (Button)sender;
             GridViewRow grv = (GridViewRow)imgbtn.NamingContainer;
+            lbl0.Text = grv.Cells[0].Text;
             lbl1.Text = grv.Cells[1].Text;
             lbl2.Text = grv.Cells[2].Text;
             lbl3.Text = grv.Cells[3].Text;
             lbl4.Text = grv.Cells[4].Text;
             lbl5.Text = grv.Cells[5].Text;
-
+           
+              ShowComment();
             ModalPopupExtender1.Show();
         }
 
@@ -152,6 +160,37 @@ namespace TestForm.ProjectsCS
             EmpGridView.DataSource = data;
             EmpGridView.DataBind();
             con.Close();
+        }
+
+        protected void Comment_Click1(object sender, EventArgs e)
+        {
+            SqlCommand cmd = con.CreateCommand();
+            cmd.CommandType = CommandType.Text;
+            con.Open();
+            cmd.CommandText = "insert into COMMENT(ProjectID, ComName, CommentText, DateComment) values(@ProjectID, @Name, @CommentText, @DateComment)";
+            cmd.Parameters.AddWithValue("@Name", TextName.Text);
+            cmd.Parameters.AddWithValue("@DateComment", DateTime.Now.ToLocalTime());
+            cmd.Parameters.AddWithValue("@CommentText", TextComment.Text);
+            cmd.Parameters.AddWithValue("@ProjectID", lbl0.Text);
+            cmd.ExecuteNonQuery();
+            con.Close();
+            TextName.Text = "";
+            TextComment.Text = "";
+                     
+        }
+        protected void ShowComment()
+        {
+            SqlDataAdapter sda = new SqlDataAdapter(("Select ComName, DateComment, CommentText from COMMENT WHERE ProjectID = " + lbl0.Text), con);
+            DataSet data = new DataSet();
+            sda.Fill(data);
+            Repeater1.DataSource = data;
+            Repeater1.DataBind();
+            con.Close();
+        }
+
+        protected void Repeater1_ItemCommand(object source, RepeaterCommandEventArgs e)
+        {
+            
         }
     }
 }
