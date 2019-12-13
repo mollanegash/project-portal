@@ -2,23 +2,21 @@
 using System.Data;
 using System.Data.SqlClient;
 using System.Text.RegularExpressions;
+using TestForm.App_Code;
 
 namespace TestForm
 {
+   
     public partial class registeration : System.Web.UI.Page
     {
-        //sql connection need to hide the data source later on for a security purposes 
-        SqlConnection con = new SqlConnection(@"Data Source=parsley.arvixe.com;Initial Catalog=computerscienceprojectportal;Persist Security Info=True;User ID=computerscienceprojectportal;Password=team4CS673");
-        
+        DBConnection DBm = new DBConnection();
+        private String Text;
+        private SqlDataReader reader;
+        private int userID;
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (con.State == ConnectionState.Open)
-            {
-                con.Close();
-            }
-            con.Open();
-
-            dis_data();
+            
 
         }
         //Function onclick on enter on register form
@@ -44,27 +42,27 @@ namespace TestForm
 
             if (methodStatus == true)
             {
-                //connected to the database
-                SqlCommand cmd = con.CreateCommand();
-                cmd.CommandType = CommandType.Text;
-
                 //link a database table from user info from the input
-                cmd.CommandText = "insert into USERTABLE (Fname, Lname,School,email,Password,RoleType)" +
+                Text = "insert into USERTABLE (Fname, Lname,School,email,Password,RoleType)" +
                     "values(@Fname,@Lname,@School,@email,@Password,@RoleType)";
 
+                //connected to the database
+                DBm.ConnectDB();
+                DBm.GetCommend(Text);
+
                 //add value to each column 
-                cmd.Parameters.AddWithValue("@Fname", firstnameTextBox.Text);
-                cmd.Parameters.AddWithValue("@Lname", lastNameTextBox.Text);
-                cmd.Parameters.AddWithValue("@School", schoolTextBox.Text);
-                cmd.Parameters.AddWithValue("@email", usernameTextBox.Text);
+                DBm.AddVal("@Fname", firstnameTextBox.Text);
+                DBm.AddVal("@Lname", lastNameTextBox.Text);
+                DBm.AddVal("@School", schoolTextBox.Text);
+                DBm.AddVal("@email", usernameTextBox.Text);
 
                 if(DropDownList1.SelectedValue == "Student")
                 {
-                    cmd.Parameters.AddWithValue("@RoleType", DropDownList1.SelectedValue);
+                    DBm.AddVal("@RoleType", DropDownList1.SelectedValue);
                 }
                 else if (DropDownList1.SelectedValue == "Faculty")
                 {
-                    cmd.Parameters.AddWithValue("RoleType", DropDownList1.SelectedValue);
+                    DBm.AddVal("RoleType", DropDownList1.SelectedValue);
                 }
                 else
                 {
@@ -85,55 +83,49 @@ namespace TestForm
 
                 //from the first : to the second is a salt
                 //from the second " to the end is a hash
-                cmd.Parameters.AddWithValue("@Password", saltHashReturned);
+                DBm.AddVal("@Password", saltHashReturned);
 
 
                 //sql execute
-                cmd.ExecuteNonQuery();
+                DBm.ExeQuery();
 
 
                 if (DropDownList1.SelectedIndex == 1)
                 {
-
-                    int studentID;
-
-                    SqlCommand std = con.CreateCommand();
-                    std.CommandType = CommandType.Text;
-                    SqlDataReader reader;
-                    std.CommandText = "SELECT U_ID FROM USERTABLE WHERE email='" + usernameTextBox.Text + "'";
-                    reader = std.ExecuteReader();
+                    DBm.ConnectDB();
+                    Text = "SELECT U_ID FROM USERTABLE WHERE email='" + usernameTextBox.Text + "'";
+                    DBm.GetCommend(Text);
+                    reader = DBm.ExeReader();
 
                     if (reader.HasRows && reader.Read())
                     {
-                        studentID = int.Parse(reader[0].ToString());
+                        userID = int.Parse(reader[0].ToString());
                         reader.Close();
 
-                        std.CommandText = "insert into STUDENT (U_ID) values(@U_ID)";
-                        std.Parameters.AddWithValue("@U_ID", studentID);
-                        std.ExecuteNonQuery();
+                        Text = "insert into STUDENT (U_ID) values(@U_ID)";
+                        DBm.AddInt("@U_ID", userID);
+                        DBm.ExeQuery();
                     }
+                    DBm.CloseDB();
 
                 }
                 else if (DropDownList1.SelectedIndex == 2)
                 {
-                    int facultyID;
-
-                    SqlCommand std = con.CreateCommand();
-                    std.CommandType = CommandType.Text;
-                    SqlDataReader reader;
-                    std.CommandText = "SELECT U_ID FROM USERTABLE WHERE email='" + usernameTextBox.Text + "'";
-                    reader = std.ExecuteReader();
+                    DBm.ConnectDB();
+                    Text = "SELECT U_ID FROM USERTABLE WHERE email='" + usernameTextBox.Text + "'";
+                    DBm.GetCommend(Text);
+                    reader = DBm.ExeReader();
 
                     if (reader.HasRows && reader.Read())
                     {
-                        facultyID = int.Parse(reader[0].ToString());
+                        userID = int.Parse(reader[0].ToString());
                         reader.Close();
 
-                        std.CommandText = "insert into FACULTY (U_ID) values(@U_ID)";
-                        std.Parameters.AddWithValue("@U_ID", facultyID);
-                        std.ExecuteNonQuery();
+                        Text = "insert into FACULTY (U_ID) values(@U_ID)";
+                        DBm.AddInt("@U_ID", userID);
+                        DBm.ExeQuery();
                     }
-
+                    DBm.CloseDB();
                 }
 
                 // Display data
@@ -142,7 +134,7 @@ namespace TestForm
                 schoolTextBox.Text = "";
                 usernameTextBox.Text = "";
 
-                dis_data();
+               
             }
 
             else
@@ -153,7 +145,7 @@ namespace TestForm
 
 
 
-        private void DisplayError()
+        public void DisplayError()
         {
 
             if (usernameTextBox.Text == "" || passwordTextBox.Text == "")
@@ -186,21 +178,11 @@ namespace TestForm
 
             }
 
+
         }
 
-        //Function to display user table will be delete after all testing is completed 
-        public void dis_data()
-        {
-            SqlCommand cmd = con.CreateCommand();
-            cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "select * from USERTABLE";
-            cmd.ExecuteNonQuery();
-            DataTable dt = new DataTable();
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            da.Fill(dt);
-            GridView1.DataSource = dt;
-            GridView1.DataBind();
-        }
+        
+        
     }
 }
 

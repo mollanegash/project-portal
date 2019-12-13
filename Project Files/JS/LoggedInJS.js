@@ -14,14 +14,11 @@ window.onload = function () {
         '<a class="nav-link nav-home" href="studentLogged.aspx" >Home</a>' +
         '</li>' +
         '<li class="nav-item">' +
-        '<a class="nav-link nav-add-project" href="studentLogged.aspx">Add Project</a>' +
+        '<a class="nav-link nav-add-project" href="AddProject.aspx">Add Project</a>' +
         '</li>' +
         '<li class="nav-item">' +
         '<a class="nav-link nav-projectlist" href="ProjectList.aspx">Project List</a>' +
         '</li>' +
-        '<li class="nav-item">' +
-        '<a class="nav-link nav-submit" href="submitsearch.cshtml">Search Project</a>' +
-        '</li>' + 
         '</ul>' +
         '</div>'
     '</nav>' +

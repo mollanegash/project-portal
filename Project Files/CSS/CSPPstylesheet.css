@@ -11,6 +11,49 @@ body {
     margin-top: 100px;
 }
 
+.auto-style11 {
+    margin-left: 138;
+}
+
+.auto-style16 {
+    width: 99%;
+    height: 107px;
+}
+
+.auto-style17 {
+    width: 192px;
+}
+
+.auto-style21 {
+    margin-left: 0;
+    margin-top: 0;
+}
+
+.auto-style22 {
+    margin-left: 61px;
+}
+
+.lblStyle {
+    padding-left: 40px;
+}
+
+.auto-style {
+    width: 355px;
+}
+
+.auto-style7 {
+    width: 355px;
+}
+
+.modalBackground {
+    color: white;
+    position: absolute;
+}   
+
+.auto-style10 {
+    text-align: center;
+}
+
 .header-banner {
     background: url("../Images/home-banner.jpg")no-repeat center;
     background-size: cover;
@@ -22,6 +65,7 @@ body {
     padding-left: 100px;
     margin-right: auto;
     margin-left: auto;
+    margin-bottom: 50px;
     width: 100%;
 }
 
@@ -245,7 +289,7 @@ body {
     width: 180px;
 }
 
-.form2{
+.form2 {
     background-color: #6ba4c7;
 }
 
@@ -261,9 +305,9 @@ body {
     margin-left: 36%;
 }
 
-.errorText{
+.errorText {
     color: red;
-    text-align:left;
+    text-align: left;
     font-weight: bold;
 }
 
@@ -412,12 +456,18 @@ body {
     margin-bottom: 20%;
 }
 
-.projectMain{
+.projectMain {
     margin-top: 5%;
 }
 
 .label-Project {
     width: 350px;
+}
+
+.table-container {
+    width: 100%;
+    margin: auto;
+    margin-top: 10px;
 }
 
 @media (max-width: 991px) {

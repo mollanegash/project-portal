@@ -1,22 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
-using System.Data.SqlClient;
 using System.Data;
-using System.Data.Sql;
+using System.Data.SqlClient;
+using TestForm.App_Code;
 
 namespace TestForm
 {
-  
+
     public partial class index : System.Web.UI.Page
-    {      
-        SqlConnection con = new SqlConnection(@"Data Source=parsley.arvixe.com;Initial Catalog=computerscienceprojectportal;Persist Security Info=True;User ID=computerscienceprojectportal;Password=team4CS673");
-        String queryStr;
-        String email;
-        SqlDataReader reader;
+    {
+        DBConnection DBm = new DBConnection();
+        private String queryStr;
+        private SqlDataReader reader;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -26,30 +21,6 @@ namespace TestForm
         protected void SubmitEventMethod(object sender, EventArgs e)
         {
             LoginWithPasswordHashFunction();
-      
-        }
-
-        public string GetEmail()
-        {
-            
-            SqlCommand cmd = con.CreateCommand();
-            cmd.CommandType = CommandType.Text;
-
-            con.Open();
-
-            queryStr = "SELECT U_ID, Fname, Lname, password, email, RoleType FROM USERTABLE WHERE email = @email";
-            cmd = new SqlCommand(queryStr, con);
-            cmd.Parameters.AddWithValue("@email", usernameTextBox.Text);
-
-            reader = cmd.ExecuteReader();
-
-            if (reader.HasRows && reader.Read())
-            {               
-               email = reader.GetString(reader.GetOrdinal("email"));              
-               reader.Close();
-               
-            }
-            return email;
         }
 
         private void LoginWithPasswordHashFunction()
@@ -63,16 +34,13 @@ namespace TestForm
             {
 
                 //connected to the database
-                SqlCommand cmd = con.CreateCommand();
-                cmd.CommandType = CommandType.Text;
-
-                con.Open();
+                DBm.ConnectDB();
 
                 queryStr = "SELECT U_ID, Fname, Lname, password, email, RoleType FROM USERTABLE WHERE email = @email";
-                cmd = new SqlCommand(queryStr, con);
-                cmd.Parameters.AddWithValue("@email", usernameTextBox.Text);
+                DBm.GetCommend(queryStr);
+                DBm.AddVal("@email", usernameTextBox.Text);
 
-                reader = cmd.ExecuteReader();
+                reader = DBm.ExeReader();
 
                 while (reader.HasRows && reader.Read())
                 {
@@ -110,12 +78,15 @@ namespace TestForm
                                 {
                                     Session["Fname"] = nameList[i];
                                     Session["U_ID"] = userId[i];
+                                    Session["RoleType"] = "Student";
                                     Response.BufferOutput = true;
                                     Response.Redirect("studentLogged.aspx", false);
                                 }
                                 else if (userRoleList[i] == "Faculty")
                                 {
                                     Session["Fname"] = nameList[i];
+                                    Session["U_ID"] = userId[i];
+                                    Session["RoleType"] = "Faculty";
                                     Response.BufferOutput = true;
                                     Response.Redirect("FacultyLogged.aspx", false);
                                 }
@@ -133,6 +104,11 @@ namespace TestForm
             catch (Exception ex)
             {
             }
+        }
+
+        protected void ForgetPwd_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("ForgetPassword.aspx");
         }
     }
 }

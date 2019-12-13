@@ -17,17 +17,11 @@ namespace TestForm
         public static bool ValidationPassword(string p1, string p2)
         {
             bool pass = true;
-            var passRegex = new System.Text.RegularExpressions.Regex("^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{4,8}$");
             if (p1.Equals(p2) == false)
             {
                 pass = false;
 
             }
-            else if (passRegex.IsMatch(p1))
-            {
-                pass = false;
-            }
-
             return pass;
         }
 

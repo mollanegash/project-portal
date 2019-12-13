@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="FacultyLogged.aspx.cs" Inherits="TestForm.ProjectsCS.FacultyLogged " %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="FacultyProfile.aspx.cs" Inherits="TestForm.ProjectsCS.FacultyProfile" %>
 
 <%@ Register Assembly="AjaxControlToolKit" Namespace="AjaxControlToolkit" TagPrefix="ajax" %>
 
@@ -38,7 +38,7 @@
         .auto-style11 {
             width: 100%;
             margin-top: 10px;
-            text-align: center;
+            text-align: left;
             margin-left: auto;
             margin-right: auto;
             margin-bottom: auto;
@@ -54,41 +54,33 @@
         <form id="form1" runat="server">
             <div>
                 <p>Hello Faculty</p>
-                <asp:Button ID="UserLabel1" runat="server" Text="No user" OnClick="FacProfile_click" Style="height: 35px" />
+                <asp:Label ID="labelText" runat="server" Text="No user"/>
                 <asp:Button ID="loggoutButton" runat="server" Text="Logout" OnClick="logoutEventMethod" />
                 <div class="auto-style11">
-                    <h4 style="font-weight: bold; color: darkblue; margin-top: 30px;">ALL Student Projects</h4>
-                    <br />
-                    <asp:ScriptManager ID="ScriptManager1" runat="server" EnableScriptGlobalization="true"></asp:ScriptManager>
-                    <div class="text-left">
-                        
-                             <asp:GridView ID="EmpGridView" ShowHeaderWhenEmpty="True" AutoGenerateColumns="false" runat="server" CellPadding="4" BackColor="White" BorderColor="#3366CC" BorderStyle="None" BorderWidth="1px" CssClass="auto-style8" OnSelectedIndexChanged="EmpGridView_SelectedIndexChanged" HorizontalAlign="Center" Width="1103px">
+                    <asp:ScriptManager ID="ScriptManager1" EnableScriptGlobalization="true" runat="server"></asp:ScriptManager>
+                    <h4 style="font-weight: bold; color: darkblue; margin-bottom: 30px; " class="text-center"> Faculty Profile</h4>
+                    <div class="text-center">
+                    <asp:GridView ID="EmpGridView" ShowHeaderWhenEmpty="True" AutoGenerateColumns="False" runat="server" CellPadding="4" BackColor="White" BorderColor="#3366CC" BorderStyle="None" BorderWidth="1px" CssClass="auto-style8" OnSelectedIndexChanged="EmpGridView_SelectedIndexChanged" HorizontalAlign="Center">
                         <Columns>
-                            <asp:BoundField HeaderText="Name" DataField="Fname" ItemStyle-Width="200">
+                            <asp:BoundField HeaderText="First Name" DataField="Fname" ItemStyle-Width="200">
                                 <ItemStyle Width="200px"></ItemStyle>
                             </asp:BoundField>
                             <asp:BoundField DataField="Lname" HeaderText="Last Name" ItemStyle-Width="200">
                                 <ItemStyle Width="200px"></ItemStyle>
                             </asp:BoundField>
-                            <asp:BoundField DataField="P_Name" HeaderText="Project Name" ItemStyle-Width="200">
+                             <asp:BoundField DataField="School" HeaderText="School" ItemStyle-Width="100">
                                 <ItemStyle Width="200px"></ItemStyle>
                             </asp:BoundField>
-                            <asp:BoundField DataField="Descrip" HeaderText="Description" ItemStyle-Width="200">
+                            <asp:BoundField DataField="Field_Exp" HeaderText="Field Experience" ItemStyle-Width="200">
                                 <ItemStyle Width="200px"></ItemStyle>
-                            </asp:BoundField>
-                            <asp:BoundField DataField="Link" HeaderText="Link" ItemStyle-Width="200">
-                                <ItemStyle Width="200px"></ItemStyle>
-                            </asp:BoundField>
-                            <asp:BoundField DataField="U_ID" HeaderText="Student ID" ItemStyle-Width="100">
-                                <ItemStyle Width="200px"></ItemStyle>
-                            </asp:BoundField>
-
+                            </asp:BoundField>                          
                             <asp:TemplateField>
                                 <ItemTemplate>
-                                    <asp:Button ID="ButtonClick1" runat="server" Height="40px"
-                                        Width="150px" Text="View Detail" OnClick="ButtonClick1_Click" />
+                                    <asp:Button ID="EditButton1" runat="server" Height="40px"
+                                        Width="150px" Text="Edit" OnClick="Edit_Click" />
                                 </ItemTemplate>
                             </asp:TemplateField>
+                          
 
                         </Columns>
                         <FooterStyle BackColor="#99CCCC" ForeColor="#003399" />
@@ -101,7 +93,7 @@
                         <SortedDescendingCellStyle BackColor="#D6DFDF" />
                         <SortedDescendingHeaderStyle BackColor="#002876" />
                     </asp:GridView>
-                        
+
                     </div>
 
                     <asp:LinkButton ID="LinkButton1" runat="server" Style="display: none"></asp:LinkButton>
@@ -110,55 +102,40 @@
                         <br />
                         <table>
                             <tr>
-                                <td class="auto-style lblStyle">Student Name</td>
+                                <td class="auto-style lblStyle">First Name</td>
                                 <td>
-                                    <asp:Label class="auto-style7" ID="Label1" runat="server" Text=""></asp:Label>
+                                    <asp:TextBox ID="TextBox1" runat="server" CssClass="offset-sm-0" Width="400px"></asp:TextBox>
                                 </td>
                             </tr>
                             <tr>
-                                <td class="auto-style lblStyle">Student Lastname</td>
+                                <td class="auto-style lblStyle">Last Name</td>
                                 <td>
-                                    <asp:Label class="auto-style7" ID="Label2" runat="server" Text=""></asp:Label>
+                                    <asp:TextBox ID="TextBox2" runat="server" Width="400px"></asp:TextBox>
                                 </td>
                             </tr>
                         </table>
                         <table class="w-100">
                             <tr>
-                                <td class="auto-style lblStyle">Project Name </td>
-                                <td class="text-left">
-                                    <asp:Label class="auto-style7" ID="Label3" runat="server" Text=""></asp:Label>
+                                <td class="auto-style lblStyle">School</td>
+                                <td>
+                                    <asp:TextBox ID="TextBox3" runat="server" Width="400px"></asp:TextBox>
                                 </td>
                             </tr>
                         </table>
                         <table class="w-100">
                             <tr>
-                                <td class="auto-style lblStyle">Description</td>
-                                <td class="text-left">
-                                    <asp:Label class="auto-style7" ID="Label4" runat="server" Text=""></asp:Label>
+                                <td class="auto-style lblStyle">Field of Experience</td>
+                                <td>
+                                    <asp:TextBox ID="TextBox4" runat="server" Width="400px"></asp:TextBox>
                                 </td>
                             </tr>
                         </table>
-                        <table class="w-100">
-                            <tr>
-                                <td class="auto-style lblStyle">Link Project</td>
-                                <td class="text-left">
-                                    <asp:Label class="auto-style7" ID="Label5" runat="server" Text=""></asp:Label>
-                                </td>
-                            </tr>
-                        </table>
-                        <table class="w-100">
-                            <tr>
-                                <td class="auto-style lblStyle">Student ID</td>
-                                <td class="text-left">
-                                    <asp:Label class="auto-style7" ID="Label6" runat="server" Text=""></asp:Label>
-                                </td>
-                            </tr>
-                        </table>
+                       
                         <br />
                         <table class="w-100">
                             <tr>
                                 <td class="auto-style10">
-                                    <asp:Button ID="Button1" runat="server" Text="ADD" OnClick="AddClick" Width="140px" />
+                                    <asp:Button ID="Button2" runat="server" Text="Enter" OnClick="EnterClick" Width="140px" />
                                 </td>
                                 <td class="auto-style10">
                                     <asp:Button ID="Button3" runat="server" Text="CANCLE" Width="140px" />
@@ -172,19 +149,12 @@
                     </asp:Panel>
                     <ajax:ModalPopupExtender ID="ModalPopupExtender1" TargetControlID="LinkButton1" PopupControlID="Panel1" CancelControlID="Button3" BackgroundCssClass="modalBackground" runat="server"></ajax:ModalPopupExtender>
                 </div>
-            </div>
+             </div>
         </form>
-         <br />
-    <br />
-    <br />
-    </header >
-   
-                       
+    </header>
     <footer class="footer-bg">
-        <!-- DOM innerHTML footer -->
-        <div id="universal-footer"></div>
-    </footer>
+		<!-- DOM innerHTML footer -->
+		<div id="universal-footer"></div>
+	</footer>
 </body>
-
 </html>
-

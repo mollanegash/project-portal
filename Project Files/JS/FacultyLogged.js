@@ -14,13 +14,10 @@ window.onload = function () {
         '<a class="nav-link nav-home" href="FacultyLogged.aspx" >Home</a>' +
         '</li>' +
         '<li class="nav-item">' +
-        '<a class="nav-link nav-add-project" href="FacultyLogged.aspx">Add Supervisee</a>' +
+        '<a class="nav-link nav-add-project" href="StudentList.aspx">View My Student\'s List</a>' +
         '</li>' +
         '<li class="nav-item">' +
         '<a class="nav-link nav-projectlist" href="ProjectList.aspx">Project List</a>' +
-        '</li>' +
-        '<li class="nav-item">' +
-        '<a class="nav-link nav-submit" href="">Search Project</a>' +
         '</li>' +
         '</ul>' +
         '</div>'
@@ -62,8 +59,6 @@ window.onload = function () {
 
 }
 
-$('.dropdown-menu li').on('click', function () {
-    var getValue = $(this).text();
-    $('.dropdown-select').text(getValue);
-});
 
+
+   

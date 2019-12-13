@@ -1,4 +1,5 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="studentLogged.aspx.cs" Inherits="TestForm.ProjectsCS.LoggedIn" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="studentLogged.aspx.cs" Inherits="TestForm.ProjectsCS.studentLogged" %>
+<%@ Register Assembly="AjaxControlToolKit" Namespace="AjaxControlToolkit" TagPrefix="ajax" %>
 
 <!DOCTYPE html>
 
@@ -7,10 +8,10 @@
 <head runat="server">
 
     <!-- Required meta tags -->
-    <meta name="description" content="WebDev">
-    <meta name="keywords" content="Computer Science Project Portal">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta charset="UTF-8">
+    <meta name="description" content="WebDev" />
+    <meta name="keywords" content="Computer Science Project Portal" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta charset="UTF-8" />
 
     <title>Computer Science Project Portal</title>
 
@@ -18,15 +19,15 @@
     <link rel="stylesheet"
         href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-        crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Be+Vietnam&display=swap" rel="stylesheet">
+        crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css?family=Be+Vietnam&display=swap" rel="stylesheet" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
 
     <!-- Custom CSS  - put last to override bootstrap where needed-->
-    <link rel="stylesheet" href="CSS/CSPPstylesheet.css">
+    <link rel="stylesheet" href="CSS/CSPPstylesheet.css" />
 
     <script src="JS/jquery-3.3.1.js"></script>
     <script src="JS/LoggedInJS.js"></script>
@@ -38,68 +39,136 @@
 
         <!-- DOM innerHTML navigation bar -->
         <div id="universal-navbar"></div>
-         <form id="form2" runat="server">
+        <form id="form1" runat="server">
             <div>
                 <p>Hello Student</p>
-                <asp:Button ID="UserLabel1" runat="server" Text="No user" />
-                <asp:Button ID="logOutButton" runat="server" Text="Logout" onclick="logoutEventMethod" />
+                <asp:Button ID="lbluser" runat="server" Text="No user" onclick="EditUser_click"  />
+                <asp:Button ID="loggoutButton" runat="server" Text="Logout" onclick="logoutEventMethod" />
+                <div class="table-container">
+                    <asp:ScriptManager ID="ScriptManager1" EnableScriptGlobalization="true" runat="server"></asp:ScriptManager>
 
-            </div>
-        <main class="projectMain">
-        <div class="container container-add">
-            <h1 class="pageintroduction">Add Project</h1>
-            <div id="formWrapper">
-                <form name="AddProject" >
+                    <asp:GridView ID="EmpGridView" ShowHeaderWhenEmpty="True" AutoGenerateColumns="False" runat="server" CellPadding="4" BackColor="White" BorderColor="#3366CC" BorderStyle="None" BorderWidth="1px" CssClass="auto-style8" OnSelectedIndexChanged="EmpGridView_SelectedIndexChanged">
+                        <Columns>
+                            <asp:BoundField HeaderText="Project ID" DataField="P_ID" ItemStyle-Width="200">
+                                <ItemStyle Width="200px"></ItemStyle>
+                            </asp:BoundField>
+                            <asp:BoundField DataField="P_Name" HeaderText="Project Name" ItemStyle-Width="200">
+                                <ItemStyle Width="200px"></ItemStyle>
+                            </asp:BoundField>
+                            <asp:BoundField DataField="UploadDate" DataFormatString="{0:MM/dd/yy}" HeaderText="Upload Date" ItemStyle-Width="200">
+                                <ItemStyle Width="200px"></ItemStyle>
+                            </asp:BoundField>
+                            <asp:BoundField DataField="Link" HeaderText="Link" ItemStyle-Width="200">
+                                <ItemStyle Width="200px"></ItemStyle>
+                            </asp:BoundField>
+                            <asp:BoundField DataField="Tag" HeaderText="Tag" ItemStyle-Width="200">
+                                <ItemStyle Width="200px"></ItemStyle>
+                            </asp:BoundField>
+                            <asp:BoundField DataField="Descrip" HeaderText="Description" ItemStyle-Width="100">
+                                <ItemStyle Width="200px"></ItemStyle>
+                            </asp:BoundField>
+                            <asp:BoundField DataField="UserID" HeaderText="Student ID" ItemStyle-Width="100">
+                                <ItemStyle Width="200px"></ItemStyle>
+                            </asp:BoundField>
 
-                    <div id="rowA" class="form-group">
-                        <label for="ProjectName" class="label-Project">ProjectName</label>
-                        <asp:TextBox ID="ProjectNameBox" Class="form-control" placeholder="Project Name" runat="server"></asp:TextBox>
-                        <p id="ProjectName-error" class="customFormErrorText"></p>
-                    </div>
+                            <asp:TemplateField>
+                                <ItemTemplate>
+                                    <asp:Button ID="EditButton1" runat="server" Height="40px"
+                                        Width="150px" Text="Edit" OnClick="Edit_Click" />
+                                </ItemTemplate>
+                            </asp:TemplateField>  
+                            <asp:TemplateField>
+                                <ItemTemplate>
+                                    <asp:Button ID="DeleteButton1" runat="server" Height="40px"
+                                        Width="150px" Text="Delete" OnClick="DeleteProject_Click" />
+                                </ItemTemplate>
+                            </asp:TemplateField> 
 
-                    <div id="rowe" class="form-group">
-                        <label for="ProjectDescription" class="label-Project">ProjectDescription</label>
-                        <asp:TextBox ID="projectDesBox" Class="form-control" placeholder="Project Descriptipn" runat="server"></asp:TextBox>
-                        <p id="ProjectDescription-error" class="customFormErrorText"></p>
+                        </Columns>
+                        <FooterStyle BackColor="#99CCCC" ForeColor="#003399" />
+                        <HeaderStyle BackColor="#003399" Font-Bold="True" ForeColor="#CCCCFF" />
+                        <PagerStyle BackColor="#99CCCC" ForeColor="#003399" HorizontalAlign="Left" />
+                        <RowStyle BackColor="White" ForeColor="#003399" />
+                        <SelectedRowStyle BackColor="#009999" Font-Bold="True" ForeColor="#CCFF99" />
+                        <SortedAscendingCellStyle BackColor="#EDF6F6" />
+                        <SortedAscendingHeaderStyle BackColor="#0D4AC4" />
+                        <SortedDescendingCellStyle BackColor="#D6DFDF" />
+                        <SortedDescendingHeaderStyle BackColor="#002876" />
+                    </asp:GridView>
 
-                    </div>
-                    <div id="rowg" class="form-group">
-                        <label for="Link" class="label-Project">Link</label>
-                        <asp:TextBox ID="LinkBox" Class="form-control" placeholder="Link" runat="server"></asp:TextBox>
-                        <p id="Authors-error" class="customFormErrorText"></p>
-
-                    </div>
-                    <div id="rowh" class="form-group">
-                        <label for="UploadDate" class="label-Project">UploadDate </label>
-                        <asp:TextBox ID="uploadBox" class="form-control" Rows="3" placeholder="has to be 10/2/2020" runat="server"></asp:TextBox>
-                        <p id="UploadDate-error" class="customFormErrorText"></p>
-                    </div>
-
-                    <div id="rowi" class="form-group">
-                        <label for="ProjectTag1" class="label-Project">ProjectTag1</label>
-                        <asp:TextBox ID="projectTagBox" class="form-control" Rows="3" placeholder="ProjectTag1" runat="server"></asp:TextBox>
-                        <p id="ProjectTag1-error" class="customFormErrorText"></p>
-                    </div>
-                    <div id="rowk" class="form-group">
-                        <div class="col-sm">
-                            <asp:Button ID="sumbit" Text="Submit" class="btn btn-dark btn-lg btn-form login-butto float-right" runat="server" OnClick="SubmitEventMethod" />
-                        </div>
-                    </div>
-                </form>
-                 <asp:GridView ID="GridView1" runat="server"></asp:GridView>
-            </div>
-        </div>
-    </main>
-    </form>
-      
-        <!-- DOM innerHTML logo text -->
-        <div id="universal-header"></div>
-
+                    <asp:LinkButton ID="LinkButton1" runat="server" Style="display: none"></asp:LinkButton>
+                    <asp:Panel ID="Panel1" runat="server" Height="319px" Width="600px" BackColor="White" BorderColor="Black" BorderStyle="Ridge" ForeColor="#003399">
+                        <br />
+                        <br />
+                        <table>
+                            <tr>
+                                <td class="auto-style lblStyle">Project Name</td>
+                                <td>
+                                    <asp:TextBox ID="TextBox1" runat="server" CssClass="offset-sm-0" Width="400px"></asp:TextBox>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="auto-style lblStyle">Upload Date</td>
+                                <td>
+                                    <asp:TextBox ID="TextBox2" runat="server" Width="400px"></asp:TextBox>
+                                </td>
+                            </tr>
+                        </table>
+                        <table class="w-100">
+                            <tr>
+                                <td class="auto-style lblStyle">Link </td>
+                                <td>
+                                    <asp:TextBox ID="TextBox3" runat="server" Width="400px"></asp:TextBox>
+                                </td>
+                            </tr>
+                        </table>
+                        <table class="w-100">
+                            <tr>
+                                <td class="auto-style lblStyle">Tag</td>
+                                <td>
+                                    <asp:TextBox ID="TextBox4" runat="server" Width="400px"></asp:TextBox>
+                                </td>
+                            </tr>
+                        </table>
+                        <table class="w-100">
+                            <tr>
+                                <td class="auto-style lblStyle">Description</td>
+                                <td>
+                                    <asp:TextBox ID="TextBox5" runat="server" Width="400px"></asp:TextBox>
+                                </td>
+                            </tr>
+                        </table>
+                        <br />
+                        <table class="w-100">
+                            <tr>
+                                <td class="auto-style10">
+                                    <asp:Button ID="Button2" runat="server" Text="Enter" OnClick="EnterClick" Width="140px" />
+                                </td>                              
+                                <td class="auto-style10">
+                                    <asp:Button ID="Button3" runat="server" Text="CANCLE" Width="140px" />
+                                </td>
+                            </tr>
+                        </table>
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                    </asp:Panel>
+                    <ajax:ModalPopupExtender ID="ModalPopupExtender1" TargetControlID="LinkButton1" PopupControlID="Panel1" CancelControlID="Button3" BackgroundCssClass="modalBackground" runat="server"></ajax:ModalPopupExtender>
+                </div>
+             </div>
+        </form>
     </header>
     <footer class="footer-bg">
-        <!-- DOM innerHTML footer -->
-        <div id="universal-footer"></div>
-
-    </footer>
+		<!-- DOM innerHTML footer -->
+		<div id="universal-footer"></div>
+	</footer>
 </body>
 </html>
+
+
+
+
+
+
+

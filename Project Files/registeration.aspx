@@ -43,7 +43,7 @@
   <main >
     <div class="container">
       <div class="form-container">
-          <h1>Sign up Form</h1>
+          <h3><strong>Sign up Form</strong></h3>
         <div class="col-md-12 col-xs-offset-1 col-sm-offset-2 col-md-8 col-md-offset-2">
           <form class="form-horizontal" runat="server">
             <br>
@@ -141,4 +141,3 @@
 
 </body>
 </html>
-

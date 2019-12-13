@@ -11,7 +11,7 @@ namespace TestForm.ProjectsCS
 {
 
 
-    public partial class studentLogged
+    public partial class FacultyProfile
     {
 
         /// <summary>
@@ -24,13 +24,13 @@ namespace TestForm.ProjectsCS
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// lbluser control.
+        /// labelText control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button lbluser;
+        protected global::System.Web.UI.WebControls.Label labelText;
 
         /// <summary>
         /// loggoutButton control.
@@ -112,15 +112,6 @@ namespace TestForm.ProjectsCS
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TextBox4;
-
-        /// <summary>
-        /// TextBox5 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox5;
 
         /// <summary>
         /// Button2 control.
